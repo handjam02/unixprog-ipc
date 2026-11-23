@@ -1,0 +1,42 @@
+[pipe] 서버 pid=4040, 클라이언트 pid=4038, 결과 폴더 results/20261122_231005
+pipe  latency    size=64       cli=1  mean=     3.68us  median=     3.62us  p99=     4.02us  max=     4.02us
+pipe  throughput size=64       cli=1       1533299 msg/s       93.6 MB/s (중앙값)
+pipe  latency    size=1024     cli=1  mean=    39.90us  median=    35.30us  p99=    69.37us  max=    77.44us
+pipe  throughput size=1024     cli=1        987189 msg/s      964.1 MB/s (중앙값)
+pipe  latency    size=16384    cli=1  mean=    47.47us  median=    40.70us  p99=    87.06us  max=   120.41us
+pipe  throughput size=16384    cli=1        129528 msg/s     2023.9 MB/s (중앙값)
+pipe  latency    size=262144   cli=1  mean=   454.86us  median=   439.28us  p99=   643.63us  max=   652.30us
+pipe  throughput size=262144   cli=1          4740 msg/s     1185.0 MB/s (중앙값)
+pipe  latency    size=1048576  cli=1  mean=  1834.08us  median=  1747.87us  p99=  3014.97us  max=  3077.82us
+pipe  throughput size=1048576  cli=1          1036 msg/s     1035.5 MB/s (중앙값)
+pipe  latency    size=64       cli=2  mean=    52.01us  median=    49.69us  p99=    90.54us  max=   122.33us
+pipe  throughput size=64       cli=2       2635884 msg/s      160.9 MB/s (중앙값)
+pipe  latency    size=1024     cli=2  mean=    44.34us  median=    43.89us  p99=    56.28us  max=    70.04us
+pipe  throughput size=1024     cli=2       1682138 msg/s     1642.7 MB/s (중앙값)
+pipe  latency    size=16384    cli=2  mean=    56.88us  median=    53.38us  p99=   102.18us  max=   188.99us
+pipe  throughput size=16384    cli=2        234591 msg/s     3665.5 MB/s (중앙값)
+pipe  latency    size=262144   cli=2  mean=   476.08us  median=   466.35us  p99=   609.98us  max=   649.69us
+pipe  throughput size=262144   cli=2          8444 msg/s     2111.1 MB/s (중앙값)
+pipe  latency    size=1048576  cli=2  mean=  1941.50us  median=  1906.64us  p99=  2274.37us  max=  7485.34us
+pipe  throughput size=1048576  cli=2          1990 msg/s     1990.2 MB/s (중앙값)
+pipe  latency    size=64       cli=4  mean=    27.11us  median=    39.52us  p99=    68.92us  max=    88.75us
+pipe  throughput size=64       cli=4       3354937 msg/s      204.8 MB/s (중앙값)
+pipe  latency    size=1024     cli=4  mean=    59.29us  median=    59.57us  p99=    82.29us  max=   119.61us
+pipe  throughput size=1024     cli=4       2123635 msg/s     2073.9 MB/s (중앙값)
+pipe  latency    size=16384    cli=4  mean=    68.58us  median=    69.11us  p99=   111.68us  max=   255.08us
+pipe  throughput size=16384    cli=4        358832 msg/s     5606.8 MB/s (중앙값)
+pipe  latency    size=262144   cli=4  mean=   680.00us  median=   673.89us  p99=   890.49us  max=  1230.30us
+pipe  throughput size=262144   cli=4         13151 msg/s     3287.7 MB/s (중앙값)
+pipe  latency    size=1048576  cli=4  mean=  2564.96us  median=  2569.96us  p99=  2977.94us  max=  4502.63us
+pipe  throughput size=1048576  cli=4          3022 msg/s     3022.1 MB/s (중앙값)
+pipe  latency    size=64       cli=8  mean=    12.22us  median=     6.09us  p99=    56.69us  max=   544.31us
+pipe  throughput size=64       cli=8       4424930 msg/s      270.1 MB/s (중앙값)
+pipe  latency    size=1024     cli=8  mean=     6.61us  median=     6.20us  p99=     8.05us  max=   309.95us
+pipe  throughput size=1024     cli=8       2650507 msg/s     2588.4 MB/s (중앙값)
+pipe  latency    size=16384    cli=8  mean=    19.92us  median=    13.15us  p99=    84.50us  max=   471.90us
+pipe  throughput size=16384    cli=8        589125 msg/s     9205.1 MB/s (중앙값)
+pipe  latency    size=262144   cli=8  mean=   190.18us  median=   169.81us  p99=   629.93us  max=  2299.54us
+pipe  throughput size=262144   cli=8         59275 msg/s    14818.8 MB/s (중앙값)
+pipe  latency    size=1048576  cli=8  mean=   960.47us  median=   903.09us  p99=  2574.64us  max=  3460.47us
+pipe  throughput size=1048576  cli=8         13153 msg/s    13152.8 MB/s (중앙값)
+[pipe] 완료. IPC 자원 정리함.

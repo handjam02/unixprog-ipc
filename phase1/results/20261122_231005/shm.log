@@ -1,0 +1,43 @@
+[shm] shmid=3 (key 60071, 41945600 bytes, 채널당 링 4칸), semid=3 (key 60072, 24개)
+[shm] 서버 pid=4212, 클라이언트 pid=4210, 결과 폴더 results/20261122_231005
+shm   latency    size=64       cli=1  mean=    51.64us  median=    50.82us  p99=    89.17us  max=    94.89us
+shm   throughput size=64       cli=1        117242 msg/s        7.2 MB/s (중앙값)
+shm   latency    size=1024     cli=1  mean=    42.84us  median=    39.69us  p99=    61.57us  max=    61.78us
+shm   throughput size=1024     cli=1         95880 msg/s       93.6 MB/s (중앙값)
+shm   latency    size=16384    cli=1  mean=    43.59us  median=    41.60us  p99=    59.24us  max=    90.29us
+shm   throughput size=16384    cli=1        120303 msg/s     1879.7 MB/s (중앙값)
+shm   latency    size=262144   cli=1  mean=    85.32us  median=    77.95us  p99=   138.40us  max=   157.64us
+shm   throughput size=262144   cli=1         64117 msg/s    16029.3 MB/s (중앙값)
+shm   latency    size=1048576  cli=1  mean=   241.61us  median=   223.34us  p99=   369.06us  max=   406.58us
+shm   throughput size=1048576  cli=1         15470 msg/s    15470.0 MB/s (중앙값)
+shm   latency    size=64       cli=2  mean=    45.98us  median=    40.44us  p99=    79.97us  max=   105.85us
+shm   throughput size=64       cli=2        173696 msg/s       10.6 MB/s (중앙값)
+shm   latency    size=1024     cli=2  mean=    49.93us  median=    46.95us  p99=    71.54us  max=    73.35us
+shm   throughput size=1024     cli=2        167584 msg/s      163.7 MB/s (중앙값)
+shm   latency    size=16384    cli=2  mean=    47.37us  median=    46.04us  p99=    69.06us  max=    97.34us
+shm   throughput size=16384    cli=2        170068 msg/s     2657.3 MB/s (중앙값)
+shm   latency    size=262144   cli=2  mean=   100.69us  median=    95.35us  p99=   137.90us  max=   168.82us
+shm   throughput size=262144   cli=2         92951 msg/s    23237.6 MB/s (중앙값)
+shm   latency    size=1048576  cli=2  mean=   365.28us  median=   355.10us  p99=   550.68us  max=   593.27us
+shm   throughput size=1048576  cli=2         17601 msg/s    17600.6 MB/s (중앙값)
+shm   latency    size=64       cli=4  mean=    68.42us  median=    67.61us  p99=    88.16us  max=   123.79us
+shm   throughput size=64       cli=4        262320 msg/s       16.0 MB/s (중앙값)
+shm   latency    size=1024     cli=4  mean=    61.55us  median=    60.49us  p99=    82.49us  max=   113.24us
+shm   throughput size=1024     cli=4        253430 msg/s      247.5 MB/s (중앙값)
+shm   latency    size=16384    cli=4  mean=    66.90us  median=    66.36us  p99=   114.26us  max=   130.10us
+shm   throughput size=16384    cli=4        266266 msg/s     4160.4 MB/s (중앙값)
+shm   latency    size=262144   cli=4  mean=   199.77us  median=   180.77us  p99=   469.05us  max=   873.74us
+shm   throughput size=262144   cli=4         56050 msg/s    14012.6 MB/s (중앙값)
+shm   latency    size=1048576  cli=4  mean=   647.89us  median=   632.40us  p99=  1073.96us  max=  1419.42us
+shm   throughput size=1048576  cli=4         11830 msg/s    11830.0 MB/s (중앙값)
+shm   latency    size=64       cli=8  mean=    33.25us  median=     7.98us  p99=   113.87us  max=   154.70us
+shm   throughput size=64       cli=8       1006746 msg/s       61.4 MB/s (중앙값)
+shm   latency    size=1024     cli=8  mean=    31.81us  median=    28.11us  p99=    98.25us  max=   129.48us
+shm   throughput size=1024     cli=8        864132 msg/s      843.9 MB/s (중앙값)
+shm   latency    size=16384    cli=8  mean=    48.89us  median=    45.64us  p99=   149.53us  max=   864.15us
+shm   throughput size=16384    cli=8        640600 msg/s    10009.4 MB/s (중앙값)
+shm   latency    size=262144   cli=8  mean=   246.05us  median=   221.96us  p99=   708.23us  max=  1873.40us
+shm   throughput size=262144   cli=8         96073 msg/s    24018.2 MB/s (중앙값)
+shm   latency    size=1048576  cli=8  mean=  1113.20us  median=   991.73us  p99=  5009.66us  max= 12060.41us
+shm   throughput size=1048576  cli=8         14459 msg/s    14459.2 MB/s (중앙값)
+[shm] 완료. IPC 자원 정리함.

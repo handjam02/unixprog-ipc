@@ -1,0 +1,4 @@
+phase1/pipe_bench
+phase1/shm_bench
+phase1/memcpy_ref
+*.tar.gz
