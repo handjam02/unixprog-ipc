@@ -1,0 +1,3 @@
+ipc,mode,msg_size,clients,warmup,reps,msgs_per_rep,samples,mean_us,median_us,p99_us,max_us,min_us,stddev_us,msgs_per_sec_mean,msgs_per_sec_median,bytes_per_sec_mean,bytes_per_sec_median,cli_utime_ms,cli_stime_ms,cli_nvcsw,cli_nivcsw,cli_vmrss_kb,srv_utime_ms,srv_stime_ms,srv_nvcsw,srv_nivcsw,srv_vmrss_kb
+shm,throughput,64,1,2,30,10000,30,6947.584,6625.691,15758.208,15758.208,5814.209,1802.389,1490555.1,1509315.8,95395526.1,96596209.0,17.609,201.472,97,48,4952,15.089,206.070,169,2,3656
+shm,throughput,1024,1,2,30,10000,30,7578.086,7378.586,9885.793,9885.793,6726.123,828.014,1332995.8,1355449.8,1364987680.3,1387980590.4,54.470,180.572,194,1,4952,60.419,173.998,91,2,3656
