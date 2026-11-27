@@ -24,6 +24,7 @@
 | 2026-11-27 | 구현 | 손재민 / Claude Code (Opus 5.5) | ipc_pipe.c 짜줘 | 6.5절 설계대로 구현: poll + O_NONBLOCK 부분 읽기, 클라이언트별 응답 mutex, FIFO 접속 순서 | 맞음: 20조건 합계 일치, TSan 경고 없음. `make tsan`(8개, 256K norm, 창 4), `kill -9` 뒤 `make cleanipc`, `ipcs`와 `ls /tmp/osproject_7_*`로 자원 남지 않음 확인 (커밋 184d8f1) | (export 예정) |
 | 2026-11-27 | 문서 | 손재민 / Claude Code (Opus 5.5) | readme 작성해줘 | `readme.txt`(8.5절 항목), `README.md` | 예시 명령을 돌려 보다 버그 발견 (2절 B3). 고친 뒤 맞음 (커밋 acf9795) | (export 예정) |
 | 2026-11-27 | 환경 | 손재민 / Claude Code (Opus 5.5) | GitHub 로그인 저장이랑 gh 설치 도와줘 | `sudo` 없이 gh를 `~/.local/bin`에 설치(체크섬 확인), 브라우저 인증, `gh auth setup-git` | 맞음: push 성공 | (export 예정) |
+| 2026-11-27 | 구현 | 손재민 / Claude Code (Opus 5.5) | ipc_shm.c 짜줘 | 기획서 v2 6.3~6.4절, 8.3~8.4절과 `ipc.h`대로 구현: 슬롯 표(프로세스 공유 robust mutex), 요청 링 16칸 + 응답 링 4칸(세그먼트 약 40MB), System V 세마포어 33개(슬롯당 4개 + NOTIFY), 상대가 죽었을 때 대비해 `semtimedop` 100ms + `kill(pid, 0)` | 맞음: 보낸 청크 합 = 서버 chunks = global (13,300개, 4K~256K, stats/norm, 클라이언트 1~8, 창 1~4), `make tsan` 경고 없음(10,800개). 클라이언트 `kill -9` 뒤 슬롯 비우고 다른 클라이언트는 계속, 서버 `kill -9` 뒤 클라이언트 96ms 안에 종료, `make cleanipc`로 남은 자원 삭제, 9번째 클라이언트 거절 확인 | (export 예정) |
 | (추가 예정) | | 박건석 / | | | | |
 
 ## 2. AI가 틀린 사례, AI 코드에서 나온 문제
