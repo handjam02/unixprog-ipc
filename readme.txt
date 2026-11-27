@@ -152,6 +152,12 @@ pipe 버전과 shared memory 버전을 만들고 성능을 비교한다.
   (스크립트는 조건마다 서버를 새로 띄워 서버 CPU 시간과 VmHWM이 조건별 값이 되게 하고,
    같은 조건의 pipe와 shm을 연달아 잰다)
 
+그래프와 집계표
+  $ python3 scripts/plot.py        (pandas, matplotlib 필요)
+  phase1/results/의 최신 폴더와 data/app/의 실험별 최신 폴더를 읽어
+  figures/*.png (그래프)와 figures/tables/*.csv (보고서에 쓴 집계 수치)를 만든다.
+  server_*_chunks.csv.gz, client_*_raw.csv.gz가 있으면 서버 구간 그래프와 지연 CDF도 만든다.
+
 8. IPC 자원 정리
 --------------------------------------------------------------------------
   자원                     이름 또는 key
