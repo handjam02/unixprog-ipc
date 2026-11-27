@@ -346,8 +346,8 @@ int main(int argc, char **argv)
     pthread_create(&snd, NULL, send_main, NULL);
     pthread_join(gen, NULL);
     pthread_join(snd, NULL);
-    /* TODO: 송신이 실패하면 수신 스레드가 client_recv에서 계속 기다릴 수 있다.
-     * 서버가 나가면 IPC 층이 -1을 돌려주는지 ipc_pipe.c/ipc_shm.c에서 확인할 것 */
+    /* 송신이 실패해도 수신 스레드가 끝나려면, 서버가 나갔을 때 client_recv가 -1을
+     * 돌려줘야 한다. ipc_pipe.c는 확인함(서버 kill -9 -> EOF -> -1). ipc_shm.c도 지킬 것 */
     pthread_join(rcv, NULL);
     getrusage(RUSAGE_SELF, &ru1);
 
