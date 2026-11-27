@@ -1,0 +1,13 @@
+## ipcs -m -s -q (측정 직후, 03:08:50)
+
+------ Message Queues --------
+key        msqid      owner      perms      used-bytes   messages    
+
+------ Shared Memory Segments --------
+key        shmid      owner      perms      bytes      nattch     status      
+
+------ Semaphore Arrays --------
+key        semid      owner      perms      nsems     
+
+## ls /tmp/osproject_7_*
+ls: cannot access '/tmp/osproject_7_*': No such file or directory

@@ -1,0 +1,5 @@
+ipc,mode,size,clients,runs,client_fail,server_chunks,client_sent_sum,match,leftover_ipc,seconds
+pipe,stats,4K,8,30,0,264000,264000,1,0,11
+shm,stats,4K,8,30,0,264000,264000,1,0,10
+pipe,stats,64K,8,30,0,264000,264000,1,0,26
+shm,stats,64K,8,30,0,264000,264000,1,0,19
