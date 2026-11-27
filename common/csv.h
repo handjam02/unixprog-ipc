@@ -10,7 +10,7 @@
 
 #include <stdio.h>
 
-int   ensure_dir(const char *dir);                   /* 없으면 만든다(한 단계). 0 성공 */
+int   ensure_dir(const char *dir);                   /* mkdir -p. 0 성공 */
 
 /* append = 0: 새로 쓰고 머리줄을 쓴다.
  * append = 1: 덧붙이고, 파일이 비어 있을 때만 머리줄을 쓴다.

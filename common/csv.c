@@ -4,15 +4,29 @@
 #include "csv.h"
 
 #include <errno.h>
+#include <string.h>
 #include <sys/file.h>
 #include <sys/stat.h>
 
+/* mkdir -p: 중간 폴더까지 만든다 */
 int ensure_dir(const char *dir)
 {
-    if (mkdir(dir, 0755) == 0 || errno == EEXIST)
-        return 0;
-    perror(dir);
-    return -1;
+    char p[1024];
+    size_t n = strlen(dir);
+
+    if (n == 0 || n >= sizeof(p)) return -1;
+    memcpy(p, dir, n + 1);
+    for (size_t i = 1; i <= n; i++) {
+        if (p[i] != '/' && p[i] != '\0') continue;
+        char c = p[i];
+        p[i] = '\0';
+        if (mkdir(p, 0755) < 0 && errno != EEXIST) {
+            perror(p);
+            return -1;
+        }
+        p[i] = c;
+    }
+    return 0;
 }
 
 FILE *csv_open(const char *path, const char *header, int append)
