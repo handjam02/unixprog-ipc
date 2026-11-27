@@ -139,9 +139,15 @@ pipe 버전과 shared memory 버전을 만들고 성능을 비교한다.
   옵션과 측정 방법은 phase1/README.md 참고.
 
 응용 측정
-  $ scripts/run_app.sh
-  결과: data/app/ 아래 6절의 CSV
-  (스크립트는 조건마다 서버를 새로 띄워 서버 CPU 시간과 VmHWM이 조건별 값이 되게 한다)
+  $ scripts/run_app.sh -q          짧은 시험: 64조건 1회씩, 청크 200개 (약 20초, 전체 시간 추정)
+  $ scripts/run_app.sh             E0 전체: 64조건 x 30회, 청크 1000개 (약 40분)
+  $ scripts/run_app.sh -s "64K 256K" -c 8 -E "-L table" -T e1_table    추가 실험 예
+  옵션 목록은 scripts/run_app.sh -h.
+  결과: data/app/<실험 이름>_<날짜_시각>/ 아래 6절의 CSV와
+    env.txt (측정 환경), checks.csv (조건마다 합계 검증, 실패 수, 남은 IPC 자원),
+    run.log (진행 기록), ipcs_after.txt (측정 직후 ipcs). 원자료는 .gz로 압축한다.
+  (스크립트는 조건마다 서버를 새로 띄워 서버 CPU 시간과 VmHWM이 조건별 값이 되게 하고,
+   같은 조건의 pipe와 shm을 연달아 잰다)
 
 8. IPC 자원 정리
 --------------------------------------------------------------------------
