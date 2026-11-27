@@ -1,0 +1,738 @@
+조건 64개 x 1회, 결과: data/app/quick_20261127_221037
+[1/64] pipe stats_4K_c1 ... client[pipe] id=0 stats 4096B c=1 W=1 r=1  mean=105.0us median=100.4us p99=176.7us max=229.3us  7397 chunk/s  sent=300
+server[pipe]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5099 silent_runs=72
+server[pipe] stats_4K_c1: chunks=300 bytes=1228800 global=300 bad=0 send_fail=0 dropped=0
+  utime=1488us stime=18305us nvcsw=615 nivcsw=1 VmRSS=2732kB VmHWM=2860kB
+0s
+[2/64] shm stats_4K_c1 ... client[shm] id=0 stats 4096B c=1 W=1 r=1  mean=112.1us median=109.0us p99=184.4us max=222.6us  6849 chunk/s  sent=300
+server[shm]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5099 silent_runs=72
+server[shm] stats_4K_c1: chunks=300 bytes=1228800 global=300 bad=0 send_fail=0 dropped=0
+  utime=0us stime=20061us nvcsw=616 nivcsw=0 VmRSS=2796kB VmHWM=2924kB
+0s
+[3/64] pipe stats_4K_c2 ... client[pipe] id=0 stats 4096B c=2 W=1 r=1  mean=145.2us median=142.0us p99=240.7us max=384.4us  5539 chunk/s  sent=300
+client[pipe] id=1 stats 4096B c=2 W=1 r=1  mean=145.3us median=140.9us p99=266.9us max=404.7us  5493 chunk/s  sent=300
+server[pipe]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5099 silent_runs=72
+  client 1: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5096 silent_runs=72
+server[pipe] stats_4K_c2: chunks=600 bytes=2457600 global=600 bad=0 send_fail=0 dropped=0
+  utime=6595us stime=40118us nvcsw=1208 nivcsw=10 VmRSS=2744kB VmHWM=2872kB
+1s
+[4/64] shm stats_4K_c2 ... client[shm] id=1 stats 4096B c=2 W=1 r=1  mean=148.5us median=146.6us p99=231.5us max=253.1us  5273 chunk/s  sent=300
+client[shm] id=0 stats 4096B c=2 W=1 r=1  mean=154.7us median=148.1us p99=251.8us max=682.2us  5081 chunk/s  sent=300
+server[shm]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5099 silent_runs=72
+  client 1: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5096 silent_runs=72
+server[shm] stats_4K_c2: chunks=600 bytes=2457600 global=600 bad=0 send_fail=0 dropped=0
+  utime=2927us stime=40801us nvcsw=1180 nivcsw=48 VmRSS=2924kB VmHWM=3052kB
+0s
+[5/64] pipe stats_4K_c4 ... client[pipe] id=2 stats 4096B c=4 W=1 r=1  mean=176.3us median=171.2us p99=334.7us max=424.0us  4422 chunk/s  sent=300
+client[pipe] id=0 stats 4096B c=4 W=1 r=1  mean=179.2us median=172.5us p99=359.0us max=397.8us  4500 chunk/s  sent=300
+client[pipe] id=3 stats 4096B c=4 W=1 r=1  mean=181.3us median=180.6us p99=319.0us max=619.6us  4361 chunk/s  sent=300
+client[pipe] id=1 stats 4096B c=4 W=1 r=1  mean=177.4us median=177.0us p99=320.3us max=609.3us  4437 chunk/s  sent=300
+server[pipe]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5099 silent_runs=72
+  client 1: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5096 silent_runs=72
+  client 2: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5095 silent_runs=72
+  client 3: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5097 silent_runs=72
+server[pipe] stats_4K_c4: chunks=1200 bytes=4915200 global=1200 bad=0 send_fail=0 dropped=0
+  utime=12592us stime=86872us nvcsw=2340 nivcsw=130 VmRSS=2796kB VmHWM=2924kB
+0s
+[6/64] shm stats_4K_c4 ... client[shm] id=0 stats 4096B c=4 W=1 r=1  mean=197.3us median=188.5us p99=380.5us max=437.1us  4028 chunk/s  sent=300
+client[shm] id=1 stats 4096B c=4 W=1 r=1  mean=199.2us median=186.1us p99=379.3us max=423.0us  4000 chunk/s  sent=300
+client[shm] id=2 stats 4096B c=4 W=1 r=1  mean=204.4us median=200.4us p99=391.6us max=576.3us  3817 chunk/s  sent=300
+client[shm] id=3 stats 4096B c=4 W=1 r=1  mean=194.4us median=179.8us p99=422.4us max=526.1us  4075 chunk/s  sent=300
+server[shm]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5099 silent_runs=72
+  client 1: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5096 silent_runs=72
+  client 2: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5095 silent_runs=72
+  client 3: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5097 silent_runs=72
+server[shm] stats_4K_c4: chunks=1200 bytes=4915200 global=1200 bad=0 send_fail=0 dropped=0
+  utime=21237us stime=89570us nvcsw=2370 nivcsw=163 VmRSS=3372kB VmHWM=3500kB
+0s
+[7/64] pipe stats_4K_c8 ... client[pipe] id=2 stats 4096B c=8 W=1 r=1  mean=268.5us median=220.0us p99=619.7us max=5802.4us  3074 chunk/s  sent=300
+client[pipe] id=0 stats 4096B c=8 W=1 r=1  mean=278.0us median=227.3us p99=719.5us max=5827.5us  3056 chunk/s  sent=300
+client[pipe] id=4 stats 4096B c=8 W=1 r=1  mean=257.2us median=206.4us p99=1008.2us max=4330.0us  3254 chunk/s  sent=300
+client[pipe] id=5 stats 4096B c=8 W=1 r=1  mean=268.4us median=210.3us p99=744.0us max=5797.8us  3085 chunk/s  sent=300
+client[pipe] id=1 stats 4096B c=8 W=1 r=1  mean=308.1us median=228.1us p99=964.2us max=5772.9us  2743 chunk/s  sent=300
+client[pipe] id=6 stats 4096B c=8 W=1 r=1  mean=268.2us median=211.3us p99=809.8us max=5753.7us  3113 chunk/s  sent=300
+client[pipe] id=7 stats 4096B c=8 W=1 r=1  mean=274.1us median=222.7us p99=1063.3us max=5659.6us  2997 chunk/s  sent=300
+client[pipe] id=3 stats 4096B c=8 W=1 r=1  mean=299.9us median=226.0us p99=1298.9us max=5799.6us  2822 chunk/s  sent=300
+server[pipe]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5099 silent_runs=72
+  client 1: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5096 silent_runs=72
+  client 2: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5095 silent_runs=72
+  client 3: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5097 silent_runs=72
+  client 4: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5099 silent_runs=72
+  client 5: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5096 silent_runs=72
+  client 6: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5097 silent_runs=72
+  client 7: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5096 silent_runs=72
+server[pipe] stats_4K_c8: chunks=2400 bytes=9830400 global=2400 bad=0 send_fail=0 dropped=0
+  utime=15998us stime=142539us nvcsw=2867 nivcsw=643 VmRSS=2892kB VmHWM=3020kB
+0s
+[8/64] shm stats_4K_c8 ... client[shm] id=5 stats 4096B c=8 W=1 r=1  mean=235.4us median=206.7us p99=868.3us max=1828.5us  3534 chunk/s  sent=300
+client[shm] id=1 stats 4096B c=8 W=1 r=1  mean=250.2us median=210.0us p99=1130.7us max=1365.3us  3459 chunk/s  sent=300
+client[shm] id=0 stats 4096B c=8 W=1 r=1  mean=236.2us median=193.7us p99=816.8us max=1135.4us  3480 chunk/s  sent=300
+client[shm] id=4 stats 4096B c=8 W=1 r=1  mean=231.3us median=211.3us p99=688.2us max=750.0us  3438 chunk/s  sent=300
+client[shm] id=2 stats 4096B c=8 W=1 r=1  mean=247.1us median=205.6us p99=981.3us max=1336.8us  3286 chunk/s  sent=300
+client[shm] id=3 stats 4096B c=8 W=1 r=1  mean=240.4us median=208.0us p99=757.5us max=1541.0us  3319 chunk/s  sent=300
+client[shm] id=6 stats 4096B c=8 W=1 r=1  mean=240.8us median=193.2us p99=916.8us max=1330.1us  3412 chunk/s  sent=300
+client[shm] id=7 stats 4096B c=8 W=1 r=1  mean=231.1us median=184.7us p99=767.8us max=1493.7us  3548 chunk/s  sent=300
+server[shm]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5099 silent_runs=72
+  client 1: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5096 silent_runs=72
+  client 2: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5095 silent_runs=72
+  client 3: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5097 silent_runs=72
+  client 4: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5099 silent_runs=72
+  client 5: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5096 silent_runs=72
+  client 6: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5097 silent_runs=72
+  client 7: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5096 silent_runs=72
+server[shm] stats_4K_c8: chunks=2400 bytes=9830400 global=2400 bad=0 send_fail=0 dropped=0
+  utime=38223us stime=114953us nvcsw=2879 nivcsw=608 VmRSS=3976kB VmHWM=4104kB
+0s
+[9/64] pipe stats_16K_c1 ... client[pipe] id=0 stats 16384B c=1 W=1 r=1  mean=136.3us median=133.3us p99=184.8us max=232.4us  5889 chunk/s  sent=300
+server[pipe]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5099 silent_runs=149
+server[pipe] stats_16K_c1: chunks=300 bytes=4915200 global=300 bad=0 send_fail=0 dropped=0
+  utime=4602us stime=22045us nvcsw=613 nivcsw=1 VmRSS=2636kB VmHWM=2764kB
+1s
+[10/64] shm stats_16K_c1 ... client[shm] id=0 stats 16384B c=1 W=1 r=1  mean=101.3us median=98.1us p99=151.1us max=190.1us  7850 chunk/s  sent=300
+server[shm]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5099 silent_runs=149
+server[shm] stats_16K_c1: chunks=300 bytes=4915200 global=300 bad=0 send_fail=0 dropped=0
+  utime=5907us stime=13839us nvcsw=617 nivcsw=0 VmRSS=3020kB VmHWM=3148kB
+0s
+[11/64] pipe stats_16K_c2 ... client[pipe] id=0 stats 16384B c=2 W=1 r=1  mean=156.9us median=152.5us p99=246.2us max=299.1us  5241 chunk/s  sent=300
+client[pipe] id=1 stats 16384B c=2 W=1 r=1  mean=157.3us median=153.6us p99=237.2us max=290.7us  5195 chunk/s  sent=300
+server[pipe]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5099 silent_runs=149
+  client 1: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5096 silent_runs=149
+server[pipe] stats_16K_c2: chunks=600 bytes=9830400 global=600 bad=0 send_fail=0 dropped=0
+  utime=5464us stime=47963us nvcsw=1206 nivcsw=0 VmRSS=2768kB VmHWM=2896kB
+0s
+[12/64] shm stats_16K_c2 ... client[shm] id=1 stats 16384B c=2 W=1 r=1  mean=151.3us median=145.2us p99=215.2us max=282.7us  5387 chunk/s  sent=300
+client[shm] id=0 stats 16384B c=2 W=1 r=1  mean=152.8us median=146.8us p99=278.4us max=310.1us  5366 chunk/s  sent=300
+server[shm]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5099 silent_runs=149
+  client 1: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5096 silent_runs=149
+server[shm] stats_16K_c2: chunks=600 bytes=9830400 global=600 bad=0 send_fail=0 dropped=0
+  utime=9977us stime=40959us nvcsw=1198 nivcsw=5 VmRSS=3376kB VmHWM=3504kB
+0s
+[13/64] pipe stats_16K_c4 ... client[pipe] id=2 stats 16384B c=4 W=1 r=1  mean=220.2us median=217.4us p99=388.4us max=459.5us  3696 chunk/s  sent=300
+client[pipe] id=0 stats 16384B c=4 W=1 r=1  mean=213.2us median=204.1us p99=464.2us max=527.2us  3835 chunk/s  sent=300
+client[pipe] id=1 stats 16384B c=4 W=1 r=1  mean=208.3us median=198.7us p99=430.9us max=474.0us  3902 chunk/s  sent=300
+client[pipe] id=3 stats 16384B c=4 W=1 r=1  mean=216.4us median=213.1us p99=414.4us max=554.8us  3790 chunk/s  sent=300
+server[pipe]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5099 silent_runs=149
+  client 1: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5096 silent_runs=149
+  client 2: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5095 silent_runs=149
+  client 3: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5097 silent_runs=149
+server[pipe] stats_16K_c4: chunks=1200 bytes=19660800 global=1200 bad=0 send_fail=0 dropped=0
+  utime=52588us stime=86182us nvcsw=2329 nivcsw=138 VmRSS=2864kB VmHWM=2992kB
+0s
+[14/64] shm stats_16K_c4 ... client[shm] id=3 stats 16384B c=4 W=1 r=1  mean=201.5us median=191.8us p99=420.6us max=1124.9us  4132 chunk/s  sent=300
+client[shm] id=0 stats 16384B c=4 W=1 r=1  mean=201.1us median=190.4us p99=441.7us max=681.4us  4032 chunk/s  sent=300
+client[shm] id=2 stats 16384B c=4 W=1 r=1  mean=201.7us median=196.6us p99=403.8us max=574.7us  4028 chunk/s  sent=300
+client[shm] id=1 stats 16384B c=4 W=1 r=1  mean=194.4us median=187.4us p99=374.0us max=495.4us  4200 chunk/s  sent=300
+server[shm]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5099 silent_runs=149
+  client 1: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5096 silent_runs=149
+  client 2: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5095 silent_runs=149
+  client 3: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5097 silent_runs=149
+server[shm] stats_16K_c4: chunks=1200 bytes=19660800 global=1200 bad=0 send_fail=0 dropped=0
+  utime=21495us stime=101817us nvcsw=2339 nivcsw=122 VmRSS=4144kB VmHWM=4272kB
+0s
+[15/64] pipe stats_16K_c8 ... client[pipe] id=0 stats 16384B c=8 W=1 r=1  mean=297.9us median=249.0us p99=848.6us max=1569.4us  2740 chunk/s  sent=300
+client[pipe] id=3 stats 16384B c=8 W=1 r=1  mean=315.0us median=257.4us p99=1064.2us max=1838.8us  2659 chunk/s  sent=300
+client[pipe] id=2 stats 16384B c=8 W=1 r=1  mean=309.8us median=249.7us p99=1021.9us max=1799.6us  2702 chunk/s  sent=300
+client[pipe] id=6 stats 16384B c=8 W=1 r=1  mean=316.3us median=268.0us p99=903.8us max=1861.8us  2617 chunk/s  sent=300
+client[pipe] id=4 stats 16384B c=8 W=1 r=1  mean=328.4us median=277.9us p99=1104.0us max=2111.2us  2572 chunk/s  sent=300
+client[pipe] id=5 stats 16384B c=8 W=1 r=1  mean=334.4us median=285.6us p99=1147.5us max=1757.8us  2528 chunk/s  sent=300
+client[pipe] id=1 stats 16384B c=8 W=1 r=1  mean=336.7us median=273.7us p99=949.1us max=2218.6us  2452 chunk/s  sent=300
+client[pipe] id=7 stats 16384B c=8 W=1 r=1  mean=299.7us median=245.9us p99=852.6us max=1945.0us  2779 chunk/s  sent=300
+server[pipe]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5099 silent_runs=149
+  client 1: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5096 silent_runs=149
+  client 2: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5095 silent_runs=149
+  client 3: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5097 silent_runs=149
+  client 4: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5099 silent_runs=149
+  client 5: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5096 silent_runs=149
+  client 6: chunks=300 bytes=4915200 mean_rms=0.1894 max_peak=0.5097 silent_runs=149
+  client 7: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5096 silent_runs=149
+server[pipe] stats_16K_c8: chunks=2400 bytes=39321600 global=2400 bad=0 send_fail=0 dropped=0
+  utime=63595us stime=152331us nvcsw=2532 nivcsw=744 VmRSS=2984kB VmHWM=3112kB
+1s
+[16/64] shm stats_16K_c8 ... client[shm] id=5 stats 16384B c=8 W=1 r=1  mean=343.5us median=280.1us p99=1095.2us max=1633.6us  2433 chunk/s  sent=300
+client[shm] id=1 stats 16384B c=8 W=1 r=1  mean=357.0us median=293.1us p99=1226.1us max=1651.6us  2235 chunk/s  sent=300
+client[shm] id=4 stats 16384B c=8 W=1 r=1  mean=372.3us median=285.0us p99=1246.8us max=1570.2us  2252 chunk/s  sent=300
+client[shm] id=2 stats 16384B c=8 W=1 r=1  mean=378.0us median=302.0us p99=1220.1us max=3332.5us  2177 chunk/s  sent=300
+client[shm] id=6 stats 16384B c=8 W=1 r=1  mean=357.2us median=272.3us p99=1099.5us max=1418.7us  2255 chunk/s  sent=300
+client[shm] id=7 stats 16384B c=8 W=1 r=1  mean=360.0us median=274.5us p99=1124.1us max=1167.9us  2336 chunk/s  sent=300
+client[shm] id=3 stats 16384B c=8 W=1 r=1  mean=355.8us median=262.4us p99=1187.2us max=1336.6us  2317 chunk/s  sent=300
+client[shm] id=0 stats 16384B c=8 W=1 r=1  mean=405.0us median=285.6us p99=1488.9us max=5522.6us  2085 chunk/s  sent=300
+server[shm]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5099 silent_runs=149
+  client 1: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5096 silent_runs=149
+  client 2: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5095 silent_runs=149
+  client 3: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5097 silent_runs=149
+  client 4: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5099 silent_runs=149
+  client 5: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5096 silent_runs=149
+  client 6: chunks=300 bytes=4915200 mean_rms=0.1894 max_peak=0.5097 silent_runs=149
+  client 7: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5096 silent_runs=149
+server[shm] stats_16K_c8: chunks=2400 bytes=39321600 global=2400 bad=0 send_fail=0 dropped=0
+  utime=106110us stime=136574us nvcsw=2908 nivcsw=605 VmRSS=5568kB VmHWM=5696kB
+0s
+[17/64] pipe stats_64K_c1 ... client[pipe] id=0 stats 65536B c=1 W=1 r=1  mean=375.4us median=369.1us p99=573.1us max=755.2us  2388 chunk/s  sent=300
+server[pipe]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5099 silent_runs=458
+server[pipe] stats_64K_c1: chunks=300 bytes=19660800 global=300 bad=0 send_fail=0 dropped=0
+  utime=32393us stime=33897us nvcsw=909 nivcsw=10 VmRSS=2860kB VmHWM=2988kB
+0s
+[18/64] shm stats_64K_c1 ... client[shm] id=0 stats 65536B c=1 W=1 r=1  mean=210.5us median=205.9us p99=311.8us max=321.2us  4024 chunk/s  sent=300
+server[shm]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5099 silent_runs=458
+server[shm] stats_64K_c1: chunks=300 bytes=19660800 global=300 bad=0 send_fail=0 dropped=0
+  utime=24855us stime=21386us nvcsw=620 nivcsw=5 VmRSS=3884kB VmHWM=4012kB
+0s
+[19/64] pipe stats_64K_c2 ... client[pipe] id=1 stats 65536B c=2 W=1 r=1  mean=440.2us median=401.3us p99=1187.4us max=2373.3us  2023 chunk/s  sent=300
+client[pipe] id=0 stats 65536B c=2 W=1 r=1  mean=442.4us median=408.2us p99=1047.8us max=1256.1us  2025 chunk/s  sent=300
+server[pipe]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5099 silent_runs=458
+  client 1: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5096 silent_runs=458
+server[pipe] stats_64K_c2: chunks=600 bytes=39321600 global=600 bad=0 send_fail=0 dropped=0
+  utime=84538us stime=61468us nvcsw=1301 nivcsw=30 VmRSS=2864kB VmHWM=2992kB
+0s
+[20/64] shm stats_64K_c2 ... client[shm] id=1 stats 65536B c=2 W=1 r=1  mean=277.8us median=246.1us p99=658.1us max=3384.8us  3015 chunk/s  sent=300
+client[shm] id=0 stats 65536B c=2 W=1 r=1  mean=291.0us median=249.5us p99=522.8us max=3950.0us  2927 chunk/s  sent=300
+server[shm]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5099 silent_runs=458
+  client 1: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5096 silent_runs=458
+server[shm] stats_64K_c2: chunks=600 bytes=39321600 global=600 bad=0 send_fail=0 dropped=0
+  utime=66177us stime=41508us nvcsw=1205 nivcsw=11 VmRSS=5016kB VmHWM=5144kB
+1s
+[21/64] pipe stats_64K_c4 ... client[pipe] id=1 stats 65536B c=4 W=1 r=1  mean=370.5us median=359.6us p99=652.2us max=701.4us  2393 chunk/s  sent=300
+client[pipe] id=2 stats 65536B c=4 W=1 r=1  mean=365.0us median=351.1us p99=618.1us max=796.4us  2425 chunk/s  sent=300
+client[pipe] id=3 stats 65536B c=4 W=1 r=1  mean=373.5us median=341.9us p99=655.0us max=2147.7us  2370 chunk/s  sent=300
+client[pipe] id=0 stats 65536B c=4 W=1 r=1  mean=402.7us median=358.6us p99=691.1us max=5719.7us  2221 chunk/s  sent=300
+server[pipe]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5099 silent_runs=458
+  client 1: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5096 silent_runs=458
+  client 2: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5095 silent_runs=458
+  client 3: chunks=300 bytes=19660800 mean_rms=0.1912 max_peak=0.5097 silent_runs=458
+server[pipe] stats_64K_c4: chunks=1200 bytes=78643200 global=1200 bad=0 send_fail=0 dropped=0
+  utime=122782us stime=120286us nvcsw=2230 nivcsw=349 VmRSS=2908kB VmHWM=3036kB
+0s
+[22/64] shm stats_64K_c4 ... client[shm] id=1 stats 65536B c=4 W=1 r=1  mean=351.8us median=295.0us p99=731.8us max=6114.5us  2411 chunk/s  sent=300
+client[shm] id=0 stats 65536B c=4 W=1 r=1  mean=364.0us median=297.4us p99=1093.2us max=6228.3us  2294 chunk/s  sent=300
+client[shm] id=2 stats 65536B c=4 W=1 r=1  mean=362.2us median=299.1us p99=945.0us max=6175.9us  2331 chunk/s  sent=300
+client[shm] id=3 stats 65536B c=4 W=1 r=1  mean=366.5us median=302.6us p99=1421.7us max=5549.3us  2387 chunk/s  sent=300
+server[shm]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5099 silent_runs=458
+  client 1: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5096 silent_runs=458
+  client 2: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5095 silent_runs=458
+  client 3: chunks=300 bytes=19660800 mean_rms=0.1912 max_peak=0.5097 silent_runs=458
+server[shm] stats_64K_c4: chunks=1200 bytes=78643200 global=1200 bad=0 send_fail=0 dropped=0
+  utime=142305us stime=65986us nvcsw=2138 nivcsw=559 VmRSS=7328kB VmHWM=7456kB
+0s
+[23/64] pipe stats_64K_c8 ... client[pipe] id=5 stats 65536B c=8 W=1 r=1  mean=597.2us median=576.3us p99=1221.4us max=1763.3us  1536 chunk/s  sent=300
+client[pipe] id=0 stats 65536B c=8 W=1 r=1  mean=607.6us median=592.6us p99=1225.7us max=1679.6us  1526 chunk/s  sent=300
+client[pipe] id=3 stats 65536B c=8 W=1 r=1  mean=618.1us median=593.0us p99=1454.4us max=2073.5us  1495 chunk/s  sent=300
+client[pipe] id=1 stats 65536B c=8 W=1 r=1  mean=634.0us median=607.3us p99=1267.7us max=1565.4us  1467 chunk/s  sent=300
+client[pipe] id=7 stats 65536B c=8 W=1 r=1  mean=610.8us median=573.5us p99=1296.7us max=1878.2us  1524 chunk/s  sent=300
+client[pipe] id=2 stats 65536B c=8 W=1 r=1  mean=614.2us median=589.8us p99=1335.8us max=1459.4us  1488 chunk/s  sent=300
+client[pipe] id=6 stats 65536B c=8 W=1 r=1  mean=604.5us median=580.1us p99=1219.0us max=1630.0us  1519 chunk/s  sent=300
+client[pipe] id=4 stats 65536B c=8 W=1 r=1  mean=627.0us median=593.4us p99=1343.3us max=3123.7us  1457 chunk/s  sent=300
+server[pipe]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5099 silent_runs=458
+  client 1: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5096 silent_runs=458
+  client 2: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5095 silent_runs=458
+  client 3: chunks=300 bytes=19660800 mean_rms=0.1912 max_peak=0.5097 silent_runs=458
+  client 4: chunks=300 bytes=19660800 mean_rms=0.1912 max_peak=0.5099 silent_runs=458
+  client 5: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5096 silent_runs=458
+  client 6: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5097 silent_runs=458
+  client 7: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5096 silent_runs=458
+server[pipe] stats_64K_c8: chunks=2400 bytes=157286400 global=2400 bad=0 send_fail=0 dropped=0
+  utime=226964us stime=244534us nvcsw=3150 nivcsw=671 VmRSS=3048kB VmHWM=3572kB
+0s
+[24/64] shm stats_64K_c8 ... client[shm] id=0 stats 65536B c=8 W=1 r=1  mean=400.0us median=339.3us p99=999.7us max=1289.3us  2235 chunk/s  sent=300
+client[shm] id=2 stats 65536B c=8 W=1 r=1  mean=395.5us median=352.2us p99=931.7us max=1540.0us  2237 chunk/s  sent=300
+client[shm] id=4 stats 65536B c=8 W=1 r=1  mean=411.7us median=364.3us p99=1125.6us max=1798.5us  2160 chunk/s  sent=300
+client[shm] id=1 stats 65536B c=8 W=1 r=1  mean=401.0us median=355.4us p99=946.4us max=1162.2us  2157 chunk/s  sent=300
+client[shm] id=5 stats 65536B c=8 W=1 r=1  mean=398.2us median=359.2us p99=1101.1us max=1389.2us  2159 chunk/s  sent=300
+client[shm] id=3 stats 65536B c=8 W=1 r=1  mean=407.7us median=344.0us p99=1077.8us max=2915.6us  2150 chunk/s  sent=300
+client[shm] id=7 stats 65536B c=8 W=1 r=1  mean=388.3us median=346.4us p99=903.6us max=1037.3us  2167 chunk/s  sent=300
+client[shm] id=6 stats 65536B c=8 W=1 r=1  mean=414.2us median=370.0us p99=1242.5us max=1916.6us  2092 chunk/s  sent=300
+server[shm]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5099 silent_runs=458
+  client 1: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5096 silent_runs=458
+  client 2: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5095 silent_runs=458
+  client 3: chunks=300 bytes=19660800 mean_rms=0.1912 max_peak=0.5097 silent_runs=458
+  client 4: chunks=300 bytes=19660800 mean_rms=0.1912 max_peak=0.5099 silent_runs=458
+  client 5: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5096 silent_runs=458
+  client 6: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5097 silent_runs=458
+  client 7: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5096 silent_runs=458
+server[shm] stats_64K_c8: chunks=2400 bytes=157286400 global=2400 bad=0 send_fail=0 dropped=0
+  utime=265260us stime=133247us nvcsw=2281 nivcsw=837 VmRSS=11816kB VmHWM=11944kB
+1s
+[25/64] pipe stats_256K_c1 ... client[pipe] id=0 stats 262144B c=1 W=1 r=1  mean=820.5us median=797.8us p99=1298.9us max=1435.8us  1164 chunk/s  sent=300
+server[pipe]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5099 silent_runs=1687
+server[pipe] stats_256K_c1: chunks=300 bytes=78643200 global=300 bad=0 send_fail=0 dropped=0
+  utime=90906us stime=69498us nvcsw=1786 nivcsw=20 VmRSS=2984kB VmHWM=3112kB
+0s
+[26/64] shm stats_256K_c1 ... client[shm] id=0 stats 262144B c=1 W=1 r=1  mean=413.3us median=392.8us p99=884.5us max=963.2us  2234 chunk/s  sent=300
+server[shm]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5099 silent_runs=1687
+server[shm] stats_256K_c1: chunks=300 bytes=78643200 global=300 bad=0 send_fail=0 dropped=0
+  utime=68268us stime=32299us nvcsw=617 nivcsw=6 VmRSS=7084kB VmHWM=7212kB
+0s
+[27/64] pipe stats_256K_c2 ... client[pipe] id=0 stats 262144B c=2 W=1 r=1  mean=766.5us median=747.9us p99=1217.8us max=1674.6us  1243 chunk/s  sent=300
+client[pipe] id=1 stats 262144B c=2 W=1 r=1  mean=772.6us median=738.7us p99=1392.0us max=1616.9us  1231 chunk/s  sent=300
+server[pipe]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5099 silent_runs=1687
+  client 1: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5096 silent_runs=1687
+server[pipe] stats_256K_c2: chunks=600 bytes=157286400 global=600 bad=0 send_fail=0 dropped=0
+  utime=146840us stime=165195us nvcsw=1465 nivcsw=104 VmRSS=3228kB VmHWM=3356kB
+1s
+[28/64] shm stats_256K_c2 ... client[shm] id=1 stats 262144B c=2 W=1 r=1  mean=489.0us median=472.9us p99=675.9us max=1026.1us  1885 chunk/s  sent=300
+client[shm] id=0 stats 262144B c=2 W=1 r=1  mean=490.8us median=468.4us p99=752.9us max=902.6us  1876 chunk/s  sent=300
+server[shm]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5099 silent_runs=1687
+  client 1: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5096 silent_runs=1687
+server[shm] stats_256K_c2: chunks=600 bytes=157286400 global=600 bad=0 send_fail=0 dropped=0
+  utime=206536us stime=53005us nvcsw=1106 nivcsw=62 VmRSS=11028kB VmHWM=11360kB
+0s
+[29/64] pipe stats_256K_c4 ... client[pipe] id=3 stats 262144B c=4 W=1 r=1  mean=971.9us median=919.2us p99=1792.0us max=2132.4us  979 chunk/s  sent=300
+client[pipe] id=2 stats 262144B c=4 W=1 r=1  mean=984.6us median=944.7us p99=1651.4us max=1898.1us  972 chunk/s  sent=300
+client[pipe] id=0 stats 262144B c=4 W=1 r=1  mean=979.0us median=915.2us p99=1870.0us max=1881.6us  971 chunk/s  sent=300
+client[pipe] id=1 stats 262144B c=4 W=1 r=1  mean=999.7us median=940.2us p99=1758.4us max=2182.0us  954 chunk/s  sent=300
+server[pipe]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5099 silent_runs=1687
+  client 1: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5096 silent_runs=1687
+  client 2: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5095 silent_runs=1687
+  client 3: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5097 silent_runs=1687
+server[pipe] stats_256K_c4: chunks=1200 bytes=314572800 global=1200 bad=0 send_fail=0 dropped=0
+  utime=407110us stime=289841us nvcsw=2201 nivcsw=340 VmRSS=2912kB VmHWM=3652kB
+0s
+[30/64] shm stats_256K_c4 ... client[shm] id=0 stats 262144B c=4 W=1 r=1  mean=650.8us median=620.3us p99=1138.2us max=1395.2us  1419 chunk/s  sent=300
+client[shm] id=3 stats 262144B c=4 W=1 r=1  mean=660.4us median=631.3us p99=1247.6us max=1450.2us  1376 chunk/s  sent=300
+client[shm] id=2 stats 262144B c=4 W=1 r=1  mean=675.8us median=635.0us p99=1346.4us max=1988.4us  1356 chunk/s  sent=300
+client[shm] id=1 stats 262144B c=4 W=1 r=1  mean=675.5us median=624.1us p99=1253.0us max=1394.3us  1353 chunk/s  sent=300
+server[shm]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5099 silent_runs=1687
+  client 1: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5096 silent_runs=1687
+  client 2: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5095 silent_runs=1687
+  client 3: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5097 silent_runs=1687
+server[shm] stats_256K_c4: chunks=1200 bytes=314572800 global=1200 bad=0 send_fail=0 dropped=0
+  utime=502982us stime=106833us nvcsw=2120 nivcsw=232 VmRSS=19296kB VmHWM=19564kB
+1s
+[31/64] pipe stats_256K_c8 ... client[pipe] id=1 stats 262144B c=8 W=1 r=1  mean=2294.7us median=2068.2us p99=6470.1us max=8162.0us  420 chunk/s  sent=300
+client[pipe] id=4 stats 262144B c=8 W=1 r=1  mean=2235.0us median=2058.6us p99=5543.8us max=7161.4us  433 chunk/s  sent=300
+client[pipe] id=7 stats 262144B c=8 W=1 r=1  mean=2257.3us median=2128.6us p99=5227.3us max=7229.3us  428 chunk/s  sent=300
+client[pipe] id=2 stats 262144B c=8 W=1 r=1  mean=2287.9us median=2063.9us p99=5728.6us max=7638.5us  422 chunk/s  sent=300
+client[pipe] id=3 stats 262144B c=8 W=1 r=1  mean=2289.0us median=2077.4us p99=6797.6us max=8092.8us  423 chunk/s  sent=300
+client[pipe] id=5 stats 262144B c=8 W=1 r=1  mean=2251.7us median=2075.8us p99=5242.2us max=8088.8us  427 chunk/s  sent=300
+client[pipe] id=0 stats 262144B c=8 W=1 r=1  mean=2302.4us median=2053.7us p99=6346.6us max=7218.4us  419 chunk/s  sent=300
+client[pipe] id=6 stats 262144B c=8 W=1 r=1  mean=2320.1us median=2130.9us p99=6741.4us max=7796.3us  416 chunk/s  sent=300
+server[pipe]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5099 silent_runs=1687
+  client 1: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5096 silent_runs=1687
+  client 2: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5095 silent_runs=1687
+  client 3: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5097 silent_runs=1687
+  client 4: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5099 silent_runs=1687
+  client 5: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5096 silent_runs=1687
+  client 6: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5097 silent_runs=1687
+  client 7: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5096 silent_runs=1687
+server[pipe] stats_256K_c8: chunks=2400 bytes=629145600 global=2400 bad=0 send_fail=0 dropped=0
+  utime=1088555us stime=778571us nvcsw=3126 nivcsw=923 VmRSS=2980kB VmHWM=4980kB
+1s
+[32/64] shm stats_256K_c8 ... client[shm] id=1 stats 262144B c=8 W=1 r=1  mean=1244.5us median=1037.3us p99=3655.0us max=5348.6us  751 chunk/s  sent=300
+client[shm] id=0 stats 262144B c=8 W=1 r=1  mean=1267.1us median=1060.6us p99=3588.7us max=5197.8us  730 chunk/s  sent=300
+client[shm] id=4 stats 262144B c=8 W=1 r=1  mean=1252.8us median=1058.2us p99=3366.4us max=4983.8us  729 chunk/s  sent=300
+client[shm] id=6 stats 262144B c=8 W=1 r=1  mean=1249.3us median=1048.5us p99=3919.5us max=5721.3us  749 chunk/s  sent=300
+client[shm] id=2 stats 262144B c=8 W=1 r=1  mean=1265.2us median=1058.6us p99=3477.2us max=5149.4us  734 chunk/s  sent=300
+client[shm] id=5 stats 262144B c=8 W=1 r=1  mean=1271.6us median=1032.0us p99=3987.9us max=4867.5us  722 chunk/s  sent=300
+client[shm] id=7 stats 262144B c=8 W=1 r=1  mean=1218.7us median=1026.2us p99=3669.3us max=4396.7us  763 chunk/s  sent=300
+client[shm] id=3 stats 262144B c=8 W=1 r=1  mean=1301.9us median=1078.8us p99=3818.4us max=4676.0us  698 chunk/s  sent=300
+server[shm]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5099 silent_runs=1687
+  client 1: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5096 silent_runs=1687
+  client 2: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5095 silent_runs=1687
+  client 3: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5097 silent_runs=1687
+  client 4: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5099 silent_runs=1687
+  client 5: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5096 silent_runs=1687
+  client 6: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5097 silent_runs=1687
+  client 7: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5096 silent_runs=1687
+server[shm] stats_256K_c8: chunks=2400 bytes=629145600 global=2400 bad=0 send_fail=0 dropped=0
+  utime=1167248us stime=299338us nvcsw=1871 nivcsw=775 VmRSS=35720kB VmHWM=37252kB
+0s
+[33/64] pipe norm_4K_c1 ... client[pipe] id=0 norm 4096B c=1 W=1 r=1  mean=125.9us median=122.5us p99=205.5us max=264.9us  6002 chunk/s  sent=300
+server[pipe]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5099 silent_runs=72
+server[pipe] norm_4K_c1: chunks=300 bytes=1228800 global=300 bad=0 send_fail=0 dropped=0
+  utime=4019us stime=20252us nvcsw=620 nivcsw=2 VmRSS=2736kB VmHWM=2864kB
+0s
+[34/64] shm norm_4K_c1 ... client[shm] id=0 norm 4096B c=1 W=1 r=1  mean=109.9us median=105.4us p99=203.4us max=262.4us  6928 chunk/s  sent=300
+server[shm]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5099 silent_runs=72
+server[shm] norm_4K_c1: chunks=300 bytes=1228800 global=300 bad=0 send_fail=0 dropped=0
+  utime=13309us stime=7299us nvcsw=615 nivcsw=1 VmRSS=2816kB VmHWM=2944kB
+1s
+[35/64] pipe norm_4K_c2 ... client[pipe] id=1 norm 4096B c=2 W=1 r=1  mean=180.2us median=179.5us p99=261.1us max=328.9us  4303 chunk/s  sent=300
+client[pipe] id=0 norm 4096B c=2 W=1 r=1  mean=182.0us median=178.9us p99=256.0us max=309.0us  4326 chunk/s  sent=300
+server[pipe]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5099 silent_runs=72
+  client 1: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5096 silent_runs=72
+server[pipe] norm_4K_c2: chunks=600 bytes=2457600 global=600 bad=0 send_fail=0 dropped=0
+  utime=9944us stime=50200us nvcsw=1189 nivcsw=18 VmRSS=2640kB VmHWM=2768kB
+0s
+[36/64] shm norm_4K_c2 ... client[shm] id=0 norm 4096B c=2 W=1 r=1  mean=162.6us median=159.9us p99=247.2us max=263.7us  4835 chunk/s  sent=300
+client[shm] id=1 norm 4096B c=2 W=1 r=1  mean=157.2us median=155.3us p99=234.5us max=262.4us  4992 chunk/s  sent=300
+server[shm]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5099 silent_runs=72
+  client 1: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5096 silent_runs=72
+server[shm] norm_4K_c2: chunks=600 bytes=2457600 global=600 bad=0 send_fail=0 dropped=0
+  utime=0us stime=54858us nvcsw=1212 nivcsw=0 VmRSS=2896kB VmHWM=3024kB
+0s
+[37/64] pipe norm_4K_c4 ... client[pipe] id=0 norm 4096B c=4 W=1 r=1  mean=215.1us median=181.7us p99=357.8us max=5533.4us  3737 chunk/s  sent=300
+client[pipe] id=3 norm 4096B c=4 W=1 r=1  mean=211.9us median=174.7us p99=397.5us max=5467.6us  3781 chunk/s  sent=300
+client[pipe] id=1 norm 4096B c=4 W=1 r=1  mean=214.2us median=183.7us p99=364.1us max=5439.5us  3688 chunk/s  sent=300
+client[pipe] id=2 norm 4096B c=4 W=1 r=1  mean=217.5us median=184.9us p99=422.5us max=5524.3us  3661 chunk/s  sent=300
+server[pipe]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5099 silent_runs=72
+  client 1: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5096 silent_runs=72
+  client 2: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5095 silent_runs=72
+  client 3: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5097 silent_runs=72
+server[pipe] norm_4K_c4: chunks=1200 bytes=4915200 global=1200 bad=0 send_fail=0 dropped=0
+  utime=32442us stime=85377us nvcsw=2364 nivcsw=59 VmRSS=2824kB VmHWM=2952kB
+0s
+[38/64] shm norm_4K_c4 ... client[shm] id=1 norm 4096B c=4 W=1 r=1  mean=224.4us median=210.5us p99=441.6us max=1498.7us  3530 chunk/s  sent=300
+client[shm] id=2 norm 4096B c=4 W=1 r=1  mean=217.3us median=206.0us p99=390.5us max=1266.3us  3551 chunk/s  sent=300
+client[shm] id=0 norm 4096B c=4 W=1 r=1  mean=230.5us median=221.2us p99=445.8us max=1496.1us  3427 chunk/s  sent=300
+client[shm] id=3 norm 4096B c=4 W=1 r=1  mean=230.0us median=214.0us p99=704.8us max=991.4us  3444 chunk/s  sent=300
+server[shm]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5099 silent_runs=72
+  client 1: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5096 silent_runs=72
+  client 2: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5095 silent_runs=72
+  client 3: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5097 silent_runs=72
+server[shm] norm_4K_c4: chunks=1200 bytes=4915200 global=1200 bad=0 send_fail=0 dropped=0
+  utime=32787us stime=93252us nvcsw=2384 nivcsw=90 VmRSS=3432kB VmHWM=3560kB
+0s
+[39/64] pipe norm_4K_c8 ... client[pipe] id=4 norm 4096B c=8 W=1 r=1  mean=243.6us median=219.1us p99=588.0us max=992.5us  3212 chunk/s  sent=300
+client[pipe] id=0 norm 4096B c=8 W=1 r=1  mean=262.2us median=236.7us p99=658.3us max=1563.5us  3059 chunk/s  sent=300
+client[pipe] id=2 norm 4096B c=8 W=1 r=1  mean=247.3us median=215.7us p99=699.3us max=840.3us  3162 chunk/s  sent=300
+client[pipe] id=1 norm 4096B c=8 W=1 r=1  mean=251.0us median=230.0us p99=636.9us max=664.8us  3164 chunk/s  sent=300
+client[pipe] id=5 norm 4096B c=8 W=1 r=1  mean=253.2us median=224.1us p99=596.8us max=769.4us  3142 chunk/s  sent=300
+client[pipe] id=6 norm 4096B c=8 W=1 r=1  mean=267.2us median=234.8us p99=688.9us max=1157.9us  3025 chunk/s  sent=300
+client[pipe] id=3 norm 4096B c=8 W=1 r=1  mean=244.4us median=214.3us p99=536.3us max=936.7us  3200 chunk/s  sent=300
+client[pipe] id=7 norm 4096B c=8 W=1 r=1  mean=245.4us median=214.4us p99=575.1us max=730.5us  3249 chunk/s  sent=300
+server[pipe]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5099 silent_runs=72
+  client 1: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5096 silent_runs=72
+  client 2: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5095 silent_runs=72
+  client 3: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5097 silent_runs=72
+  client 4: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5099 silent_runs=72
+  client 5: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5096 silent_runs=72
+  client 6: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5097 silent_runs=72
+  client 7: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5096 silent_runs=72
+server[pipe] norm_4K_c8: chunks=2400 bytes=9830400 global=2400 bad=0 send_fail=0 dropped=0
+  utime=36800us stime=126595us nvcsw=2711 nivcsw=697 VmRSS=2888kB VmHWM=3016kB
+0s
+[40/64] shm norm_4K_c8 ... client[shm] id=3 norm 4096B c=8 W=1 r=1  mean=278.9us median=219.4us p99=1078.0us max=1469.5us  2770 chunk/s  sent=300
+client[shm] id=5 norm 4096B c=8 W=1 r=1  mean=282.0us median=240.4us p99=1023.4us max=1069.2us  2497 chunk/s  sent=300
+client[shm] id=1 norm 4096B c=8 W=1 r=1  mean=277.6us median=223.0us p99=959.8us max=1133.7us  2686 chunk/s  sent=300
+client[shm] id=4 norm 4096B c=8 W=1 r=1  mean=293.3us median=229.0us p99=1065.3us max=1506.0us  2516 chunk/s  sent=300
+client[shm] id=0 norm 4096B c=8 W=1 r=1  mean=304.8us median=235.6us p99=1252.4us max=3020.7us  2545 chunk/s  sent=300
+client[shm] id=2 norm 4096B c=8 W=1 r=1  mean=299.7us median=235.4us p99=1125.4us max=2924.0us  2522 chunk/s  sent=300
+client[shm] id=7 norm 4096B c=8 W=1 r=1  mean=267.1us median=205.7us p99=1186.2us max=1611.5us  2840 chunk/s  sent=300
+client[shm] id=6 norm 4096B c=8 W=1 r=1  mean=289.8us median=230.9us p99=1092.8us max=1371.8us  2715 chunk/s  sent=300
+server[shm]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5099 silent_runs=72
+  client 1: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5096 silent_runs=72
+  client 2: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5095 silent_runs=72
+  client 3: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5097 silent_runs=72
+  client 4: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5099 silent_runs=72
+  client 5: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5096 silent_runs=72
+  client 6: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5097 silent_runs=72
+  client 7: chunks=300 bytes=1228800 mean_rms=0.1907 max_peak=0.5096 silent_runs=72
+server[shm] norm_4K_c8: chunks=2400 bytes=9830400 global=2400 bad=0 send_fail=0 dropped=0
+  utime=50861us stime=116002us nvcsw=2908 nivcsw=873 VmRSS=4104kB VmHWM=4232kB
+1s
+[41/64] pipe norm_16K_c1 ... client[pipe] id=0 norm 16384B c=1 W=1 r=1  mean=168.3us median=157.6us p99=341.9us max=455.6us  4606 chunk/s  sent=300
+server[pipe]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5099 silent_runs=149
+server[pipe] norm_16K_c1: chunks=300 bytes=4915200 global=300 bad=0 send_fail=0 dropped=0
+  utime=28317us stime=5884us nvcsw=618 nivcsw=0 VmRSS=2748kB VmHWM=2876kB
+0s
+[42/64] shm norm_16K_c1 ... client[shm] id=0 norm 16384B c=1 W=1 r=1  mean=149.0us median=145.3us p99=214.0us max=301.9us  5102 chunk/s  sent=300
+server[shm]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5099 silent_runs=149
+server[shm] norm_16K_c1: chunks=300 bytes=4915200 global=300 bad=0 send_fail=0 dropped=0
+  utime=18852us stime=13477us nvcsw=618 nivcsw=0 VmRSS=3072kB VmHWM=3200kB
+0s
+[43/64] pipe norm_16K_c2 ... client[pipe] id=0 norm 16384B c=2 W=1 r=1  mean=200.7us median=194.8us p99=330.3us max=427.2us  3908 chunk/s  sent=300
+client[pipe] id=1 norm 16384B c=2 W=1 r=1  mean=198.8us median=193.6us p99=312.3us max=365.9us  3937 chunk/s  sent=300
+server[pipe]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5099 silent_runs=149
+  client 1: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5096 silent_runs=149
+server[pipe] norm_16K_c2: chunks=600 bytes=9830400 global=600 bad=0 send_fail=0 dropped=0
+  utime=40735us stime=34167us nvcsw=1201 nivcsw=28 VmRSS=2764kB VmHWM=2892kB
+0s
+[44/64] shm norm_16K_c2 ... client[shm] id=1 norm 16384B c=2 W=1 r=1  mean=187.5us median=184.2us p99=302.3us max=349.0us  4073 chunk/s  sent=300
+client[shm] id=0 norm 16384B c=2 W=1 r=1  mean=188.4us median=186.6us p99=307.3us max=359.1us  3675 chunk/s  sent=300
+server[shm]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5099 silent_runs=149
+  client 1: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5096 silent_runs=149
+server[shm] norm_16K_c2: chunks=600 bytes=9830400 global=600 bad=0 send_fail=0 dropped=0
+  utime=38048us stime=31054us nvcsw=1191 nivcsw=8 VmRSS=3556kB VmHWM=3684kB
+0s
+[45/64] pipe norm_16K_c4 ... client[pipe] id=2 norm 16384B c=4 W=1 r=1  mean=262.5us median=247.8us p99=554.0us max=774.6us  3025 chunk/s  sent=300
+client[pipe] id=0 norm 16384B c=4 W=1 r=1  mean=263.3us median=247.0us p99=453.4us max=738.2us  2996 chunk/s  sent=300
+client[pipe] id=3 norm 16384B c=4 W=1 r=1  mean=253.8us median=247.9us p99=436.2us max=503.7us  3104 chunk/s  sent=300
+client[pipe] id=1 norm 16384B c=4 W=1 r=1  mean=262.2us median=248.1us p99=473.2us max=594.5us  3016 chunk/s  sent=300
+server[pipe]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5099 silent_runs=149
+  client 1: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5096 silent_runs=149
+  client 2: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5095 silent_runs=149
+  client 3: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5097 silent_runs=149
+server[pipe] norm_16K_c4: chunks=1200 bytes=19660800 global=1200 bad=0 send_fail=0 dropped=0
+  utime=78142us stime=96758us nvcsw=2330 nivcsw=181 VmRSS=2860kB VmHWM=2988kB
+0s
+[46/64] shm norm_16K_c4 ... client[shm] id=0 norm 16384B c=4 W=1 r=1  mean=284.2us median=270.5us p99=515.8us max=1326.8us  2733 chunk/s  sent=300
+client[shm] id=1 norm 16384B c=4 W=1 r=1  mean=275.1us median=259.4us p99=583.7us max=988.9us  2804 chunk/s  sent=300
+client[shm] id=3 norm 16384B c=4 W=1 r=1  mean=277.8us median=264.3us p99=520.7us max=727.3us  2720 chunk/s  sent=300
+client[shm] id=2 norm 16384B c=4 W=1 r=1  mean=282.9us median=266.8us p99=547.8us max=609.4us  2632 chunk/s  sent=300
+server[shm]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5099 silent_runs=149
+  client 1: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5096 silent_runs=149
+  client 2: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5095 silent_runs=149
+  client 3: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5097 silent_runs=149
+server[shm] norm_16K_c4: chunks=1200 bytes=19660800 global=1200 bad=0 send_fail=0 dropped=0
+  utime=99954us stime=97368us nvcsw=2346 nivcsw=135 VmRSS=4408kB VmHWM=4536kB
+1s
+[47/64] pipe norm_16K_c8 ... client[pipe] id=0 norm 16384B c=8 W=1 r=1  mean=382.4us median=354.5us p99=856.1us max=966.6us  2056 chunk/s  sent=300
+client[pipe] id=5 norm 16384B c=8 W=1 r=1  mean=395.2us median=351.8us p99=1160.8us max=1276.7us  2018 chunk/s  sent=300
+client[pipe] id=3 norm 16384B c=8 W=1 r=1  mean=400.1us median=337.0us p99=1089.1us max=1780.7us  2020 chunk/s  sent=300
+client[pipe] id=6 norm 16384B c=8 W=1 r=1  mean=398.0us median=355.3us p99=1259.6us max=1675.1us  1956 chunk/s  sent=300
+client[pipe] id=2 norm 16384B c=8 W=1 r=1  mean=389.0us median=346.5us p99=1217.9us max=1603.2us  2030 chunk/s  sent=300
+client[pipe] id=7 norm 16384B c=8 W=1 r=1  mean=399.0us median=365.7us p99=838.6us max=1323.5us  1985 chunk/s  sent=300
+client[pipe] id=1 norm 16384B c=8 W=1 r=1  mean=375.3us median=339.3us p99=883.6us max=1143.1us  2060 chunk/s  sent=300
+client[pipe] id=4 norm 16384B c=8 W=1 r=1  mean=383.4us median=327.3us p99=966.1us max=2021.3us  1996 chunk/s  sent=300
+server[pipe]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5099 silent_runs=149
+  client 1: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5096 silent_runs=149
+  client 2: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5095 silent_runs=149
+  client 3: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5097 silent_runs=149
+  client 4: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5099 silent_runs=149
+  client 5: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5096 silent_runs=149
+  client 6: chunks=300 bytes=4915200 mean_rms=0.1894 max_peak=0.5097 silent_runs=149
+  client 7: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5096 silent_runs=149
+server[pipe] norm_16K_c8: chunks=2400 bytes=39321600 global=2400 bad=0 send_fail=0 dropped=0
+  utime=235467us stime=106571us nvcsw=2642 nivcsw=719 VmRSS=2936kB VmHWM=3064kB
+0s
+[48/64] shm norm_16K_c8 ... client[shm] id=1 norm 16384B c=8 W=1 r=1  mean=320.2us median=286.0us p99=870.8us max=1090.2us  2354 chunk/s  sent=300
+client[shm] id=7 norm 16384B c=8 W=1 r=1  mean=328.9us median=293.3us p99=901.9us max=1593.8us  2413 chunk/s  sent=300
+client[shm] id=0 norm 16384B c=8 W=1 r=1  mean=334.6us median=286.2us p99=959.6us max=3359.7us  2306 chunk/s  sent=300
+client[shm] id=2 norm 16384B c=8 W=1 r=1  mean=344.6us median=307.3us p99=1172.5us max=1636.4us  2236 chunk/s  sent=300
+client[shm] id=5 norm 16384B c=8 W=1 r=1  mean=349.0us median=311.9us p99=878.1us max=1506.2us  2250 chunk/s  sent=300
+client[shm] id=4 norm 16384B c=8 W=1 r=1  mean=345.8us median=304.9us p99=872.5us max=2013.0us  2298 chunk/s  sent=300
+client[shm] id=6 norm 16384B c=8 W=1 r=1  mean=341.8us median=304.4us p99=989.5us max=1925.8us  2293 chunk/s  sent=300
+client[shm] id=3 norm 16384B c=8 W=1 r=1  mean=337.6us median=303.6us p99=840.0us max=1747.3us  2237 chunk/s  sent=300
+server[shm]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5099 silent_runs=149
+  client 1: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5096 silent_runs=149
+  client 2: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5095 silent_runs=149
+  client 3: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5097 silent_runs=149
+  client 4: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5099 silent_runs=149
+  client 5: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5096 silent_runs=149
+  client 6: chunks=300 bytes=4915200 mean_rms=0.1894 max_peak=0.5097 silent_runs=149
+  client 7: chunks=300 bytes=4915200 mean_rms=0.1895 max_peak=0.5096 silent_runs=149
+server[shm] norm_16K_c8: chunks=2400 bytes=39321600 global=2400 bad=0 send_fail=0 dropped=0
+  utime=204258us stime=104960us nvcsw=2482 nivcsw=720 VmRSS=6132kB VmHWM=6260kB
+0s
+[49/64] pipe norm_64K_c1 ... client[pipe] id=0 norm 65536B c=1 W=1 r=1  mean=533.5us median=515.7us p99=778.2us max=994.6us  1557 chunk/s  sent=300
+server[pipe]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5099 silent_runs=458
+server[pipe] norm_64K_c1: chunks=300 bytes=19660800 global=300 bad=0 send_fail=0 dropped=0
+  utime=55423us stime=51376us nvcsw=1212 nivcsw=3 VmRSS=2744kB VmHWM=2872kB
+0s
+[50/64] shm norm_64K_c1 ... client[shm] id=0 norm 65536B c=1 W=1 r=1  mean=346.4us median=324.1us p99=587.2us max=1098.9us  2197 chunk/s  sent=300
+server[shm]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5099 silent_runs=458
+server[shm] norm_64K_c1: chunks=300 bytes=19660800 global=300 bad=0 send_fail=0 dropped=0
+  utime=63504us stime=21612us nvcsw=614 nivcsw=12 VmRSS=4076kB VmHWM=4204kB
+1s
+[51/64] pipe norm_64K_c2 ... client[pipe] id=0 norm 65536B c=2 W=1 r=1  mean=476.4us median=467.1us p99=649.6us max=660.0us  1736 chunk/s  sent=300
+client[pipe] id=1 norm 65536B c=2 W=1 r=1  mean=479.2us median=467.1us p99=650.3us max=764.5us  1723 chunk/s  sent=300
+server[pipe]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5099 silent_runs=458
+  client 1: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5096 silent_runs=458
+server[pipe] norm_64K_c2: chunks=600 bytes=39321600 global=600 bad=0 send_fail=0 dropped=0
+  utime=98291us stime=89319us nvcsw=2033 nivcsw=70 VmRSS=2832kB VmHWM=2960kB
+0s
+[52/64] shm norm_64K_c2 ... client[shm] id=1 norm 65536B c=2 W=1 r=1  mean=323.0us median=316.0us p99=430.9us max=574.5us  2324 chunk/s  sent=300
+client[shm] id=0 norm 65536B c=2 W=1 r=1  mean=323.1us median=312.1us p99=485.6us max=611.0us  2325 chunk/s  sent=300
+server[shm]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5099 silent_runs=458
+  client 1: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5096 silent_runs=458
+server[shm] norm_64K_c2: chunks=600 bytes=39321600 global=600 bad=0 send_fail=0 dropped=0
+  utime=133640us stime=19806us nvcsw=1231 nivcsw=20 VmRSS=5520kB VmHWM=5648kB
+0s
+[53/64] pipe norm_64K_c4 ... client[pipe] id=1 norm 65536B c=4 W=1 r=1  mean=599.2us median=578.6us p99=912.5us max=990.9us  1373 chunk/s  sent=300
+client[pipe] id=2 norm 65536B c=4 W=1 r=1  mean=591.2us median=580.8us p99=851.0us max=1039.7us  1390 chunk/s  sent=300
+client[pipe] id=0 norm 65536B c=4 W=1 r=1  mean=597.6us median=582.4us p99=1153.4us max=1246.8us  1371 chunk/s  sent=300
+client[pipe] id=3 norm 65536B c=4 W=1 r=1  mean=597.8us median=578.2us p99=912.8us max=1330.3us  1367 chunk/s  sent=300
+server[pipe]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5099 silent_runs=458
+  client 1: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5096 silent_runs=458
+  client 2: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5095 silent_runs=458
+  client 3: chunks=300 bytes=19660800 mean_rms=0.1912 max_peak=0.5097 silent_runs=458
+server[pipe] norm_64K_c4: chunks=1200 bytes=78643200 global=1200 bad=0 send_fail=0 dropped=0
+  utime=279802us stime=160135us nvcsw=3712 nivcsw=233 VmRSS=2912kB VmHWM=3040kB
+0s
+[54/64] shm norm_64K_c4 ... client[shm] id=1 norm 65536B c=4 W=1 r=1  mean=413.8us median=404.0us p99=711.2us max=771.8us  1835 chunk/s  sent=300
+client[shm] id=0 norm 65536B c=4 W=1 r=1  mean=415.9us median=406.8us p99=636.2us max=788.4us  1802 chunk/s  sent=300
+client[shm] id=3 norm 65536B c=4 W=1 r=1  mean=418.2us median=406.5us p99=778.8us max=887.8us  1814 chunk/s  sent=300
+client[shm] id=2 norm 65536B c=4 W=1 r=1  mean=418.8us median=405.7us p99=755.8us max=877.8us  1810 chunk/s  sent=300
+server[shm]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5099 silent_runs=458
+  client 1: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5096 silent_runs=458
+  client 2: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5095 silent_runs=458
+  client 3: chunks=300 bytes=19660800 mean_rms=0.1912 max_peak=0.5097 silent_runs=458
+server[shm] norm_64K_c4: chunks=1200 bytes=78643200 global=1200 bad=0 send_fail=0 dropped=0
+  utime=286918us stime=77001us nvcsw=2365 nivcsw=243 VmRSS=8284kB VmHWM=8412kB
+1s
+[55/64] pipe norm_64K_c8 ... client[pipe] id=0 norm 65536B c=8 W=1 r=1  mean=1162.3us median=1075.2us p99=2223.1us max=2809.4us  729 chunk/s  sent=300
+client[pipe] id=7 norm 65536B c=8 W=1 r=1  mean=1161.5us median=1076.9us p99=2353.4us max=2716.2us  724 chunk/s  sent=300
+client[pipe] id=1 norm 65536B c=8 W=1 r=1  mean=1189.1us median=1087.5us p99=2543.7us max=3017.5us  718 chunk/s  sent=300
+client[pipe] id=3 norm 65536B c=8 W=1 r=1  mean=1162.3us median=1086.8us p99=2156.2us max=2735.4us  730 chunk/s  sent=300
+client[pipe] id=4 norm 65536B c=8 W=1 r=1  mean=1149.1us median=1035.4us p99=2288.5us max=3073.4us  729 chunk/s  sent=300
+client[pipe] id=5 norm 65536B c=8 W=1 r=1  mean=1119.0us median=1065.2us p99=2143.6us max=2333.8us  746 chunk/s  sent=300
+client[pipe] id=6 norm 65536B c=8 W=1 r=1  mean=1136.8us median=1071.9us p99=2181.1us max=2821.0us  744 chunk/s  sent=300
+client[pipe] id=2 norm 65536B c=8 W=1 r=1  mean=1204.0us median=1096.8us p99=2625.5us max=6203.2us  702 chunk/s  sent=300
+server[pipe]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5099 silent_runs=458
+  client 1: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5096 silent_runs=458
+  client 2: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5095 silent_runs=458
+  client 3: chunks=300 bytes=19660800 mean_rms=0.1912 max_peak=0.5097 silent_runs=458
+  client 4: chunks=300 bytes=19660800 mean_rms=0.1912 max_peak=0.5099 silent_runs=458
+  client 5: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5096 silent_runs=458
+  client 6: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5097 silent_runs=458
+  client 7: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5096 silent_runs=458
+server[pipe] norm_64K_c8: chunks=2400 bytes=157286400 global=2400 bad=0 send_fail=0 dropped=0
+  utime=754622us stime=347403us nvcsw=5078 nivcsw=1256 VmRSS=2984kB VmHWM=3496kB
+0s
+[56/64] shm norm_64K_c8 ... client[shm] id=7 norm 65536B c=8 W=1 r=1  mean=742.6us median=633.8us p99=1845.5us max=3349.0us  1015 chunk/s  sent=300
+client[shm] id=4 norm 65536B c=8 W=1 r=1  mean=787.1us median=679.1us p99=3409.6us max=4085.4us  988 chunk/s  sent=300
+client[shm] id=1 norm 65536B c=8 W=1 r=1  mean=788.9us median=687.6us p99=1752.0us max=3672.6us  941 chunk/s  sent=300
+client[shm] id=0 norm 65536B c=8 W=1 r=1  mean=812.4us median=710.3us p99=1924.4us max=2910.7us  915 chunk/s  sent=300
+client[shm] id=3 norm 65536B c=8 W=1 r=1  mean=799.1us median=685.0us p99=2313.3us max=3918.6us  958 chunk/s  sent=300
+client[shm] id=6 norm 65536B c=8 W=1 r=1  mean=800.3us median=691.3us p99=3017.7us max=3432.7us  952 chunk/s  sent=300
+client[shm] id=5 norm 65536B c=8 W=1 r=1  mean=770.1us median=683.8us p99=1937.4us max=2558.7us  942 chunk/s  sent=300
+client[shm] id=2 norm 65536B c=8 W=1 r=1  mean=792.5us median=680.4us p99=2180.2us max=3171.2us  907 chunk/s  sent=300
+server[shm]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5099 silent_runs=458
+  client 1: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5096 silent_runs=458
+  client 2: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5095 silent_runs=458
+  client 3: chunks=300 bytes=19660800 mean_rms=0.1912 max_peak=0.5097 silent_runs=458
+  client 4: chunks=300 bytes=19660800 mean_rms=0.1912 max_peak=0.5099 silent_runs=458
+  client 5: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5096 silent_runs=458
+  client 6: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5097 silent_runs=458
+  client 7: chunks=300 bytes=19660800 mean_rms=0.1911 max_peak=0.5096 silent_runs=458
+server[shm] norm_64K_c8: chunks=2400 bytes=157286400 global=2400 bad=0 send_fail=0 dropped=0
+  utime=744941us stime=174699us nvcsw=2474 nivcsw=694 VmRSS=13800kB VmHWM=13928kB
+1s
+[57/64] pipe norm_256K_c1 ... client[pipe] id=0 norm 262144B c=1 W=1 r=1  mean=1506.3us median=1288.3us p99=3359.7us max=6779.6us  558 chunk/s  sent=300
+server[pipe]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5099 silent_runs=1687
+server[pipe] norm_256K_c1: chunks=300 bytes=78643200 global=300 bad=0 send_fail=0 dropped=0
+  utime=230181us stime=100976us nvcsw=2970 nivcsw=85 VmRSS=2988kB VmHWM=3116kB
+0s
+[58/64] shm norm_256K_c1 ... client[shm] id=0 norm 262144B c=1 W=1 r=1  mean=725.9us median=714.4us p99=1002.3us max=1038.3us  1017 chunk/s  sent=300
+server[shm]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5099 silent_runs=1687
+server[shm] norm_256K_c1: chunks=300 bytes=78643200 global=300 bad=0 send_fail=0 dropped=0
+  utime=179899us stime=11572us nvcsw=620 nivcsw=20 VmRSS=8032kB VmHWM=8160kB
+1s
+[59/64] pipe norm_256K_c2 ... client[pipe] id=0 norm 262144B c=2 W=1 r=1  mean=1617.2us median=1603.3us p99=2464.6us max=3123.3us  518 chunk/s  sent=300
+client[pipe] id=1 norm 262144B c=2 W=1 r=1  mean=1607.3us median=1578.3us p99=2585.6us max=7459.1us  519 chunk/s  sent=300
+server[pipe]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5099 silent_runs=1687
+  client 1: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5096 silent_runs=1687
+server[pipe] norm_256K_c2: chunks=600 bytes=157286400 global=600 bad=0 send_fail=0 dropped=0
+  utime=416481us stime=273888us nvcsw=5215 nivcsw=64 VmRSS=3208kB VmHWM=3336kB
+0s
+[60/64] shm norm_256K_c2 ... client[shm] id=1 norm 262144B c=2 W=1 r=1  mean=1108.4us median=1024.3us p99=3439.7us max=6094.6us  676 chunk/s  sent=300
+client[shm] id=0 norm 262144B c=2 W=1 r=1  mean=1104.3us median=1052.3us p99=2422.8us max=4815.4us  651 chunk/s  sent=300
+server[shm]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5099 silent_runs=1687
+  client 1: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5096 silent_runs=1687
+server[shm] norm_256K_c2: chunks=600 bytes=157286400 global=600 bad=0 send_fail=0 dropped=0
+  utime=475809us stime=53462us nvcsw=1200 nivcsw=117 VmRSS=13328kB VmHWM=13456kB
+1s
+[61/64] pipe norm_256K_c4 ... client[pipe] id=2 norm 262144B c=4 W=1 r=1  mean=2163.2us median=2098.5us p99=3107.2us max=3552.7us  383 chunk/s  sent=300
+client[pipe] id=3 norm 262144B c=4 W=1 r=1  mean=2201.6us median=2126.8us p99=3705.7us max=4954.8us  374 chunk/s  sent=300
+client[pipe] id=1 norm 262144B c=4 W=1 r=1  mean=2195.7us median=2129.3us p99=3219.6us max=4082.2us  377 chunk/s  sent=300
+client[pipe] id=0 norm 262144B c=4 W=1 r=1  mean=2219.1us median=2130.3us p99=3411.6us max=3817.8us  375 chunk/s  sent=300
+server[pipe]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5099 silent_runs=1687
+  client 1: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5096 silent_runs=1687
+  client 2: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5095 silent_runs=1687
+  client 3: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5097 silent_runs=1687
+server[pipe] norm_256K_c4: chunks=1200 bytes=314572800 global=1200 bad=0 send_fail=0 dropped=0
+  utime=1263380us stime=522073us nvcsw=9129 nivcsw=482 VmRSS=2812kB VmHWM=3300kB
+1s
+[62/64] shm norm_256K_c4 ... client[shm] id=3 norm 262144B c=4 W=1 r=1  mean=1142.5us median=1119.4us p99=1928.9us max=2430.4us  648 chunk/s  sent=300
+client[shm] id=0 norm 262144B c=4 W=1 r=1  mean=1148.8us median=1120.4us p99=1815.1us max=2891.6us  640 chunk/s  sent=300
+client[shm] id=2 norm 262144B c=4 W=1 r=1  mean=1167.4us median=1135.9us p99=2031.0us max=2074.2us  639 chunk/s  sent=300
+client[shm] id=1 norm 262144B c=4 W=1 r=1  mean=1150.8us median=1135.4us p99=1719.5us max=1980.0us  638 chunk/s  sent=300
+server[shm]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5099 silent_runs=1687
+  client 1: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5096 silent_runs=1687
+  client 2: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5095 silent_runs=1687
+  client 3: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5097 silent_runs=1687
+server[shm] norm_256K_c4: chunks=1200 bytes=314572800 global=1200 bad=0 send_fail=0 dropped=0
+  utime=1092909us stime=105507us nvcsw=2263 nivcsw=400 VmRSS=23332kB VmHWM=23524kB
+1s
+[63/64] pipe norm_256K_c8 ... client[pipe] id=6 norm 262144B c=8 W=1 r=1  mean=3022.9us median=3015.4us p99=5797.4us max=9629.8us  278 chunk/s  sent=300
+client[pipe] id=5 norm 262144B c=8 W=1 r=1  mean=3015.0us median=2826.9us p99=6925.7us max=9297.0us  276 chunk/s  sent=300
+client[pipe] id=2 norm 262144B c=8 W=1 r=1  mean=3097.3us median=2923.5us p99=5245.2us max=9642.9us  273 chunk/s  sent=300
+client[pipe] id=4 norm 262144B c=8 W=1 r=1  mean=2983.0us median=2840.2us p99=5821.5us max=8973.3us  277 chunk/s  sent=300
+client[pipe] id=3 norm 262144B c=8 W=1 r=1  mean=3029.0us median=2928.3us p99=5892.6us max=8028.5us  273 chunk/s  sent=300
+client[pipe] id=1 norm 262144B c=8 W=1 r=1  mean=3040.5us median=2820.0us p99=5436.1us max=10115.8us  274 chunk/s  sent=300
+client[pipe] id=0 norm 262144B c=8 W=1 r=1  mean=3169.8us median=2979.4us p99=6074.2us max=7592.9us  267 chunk/s  sent=300
+client[pipe] id=7 norm 262144B c=8 W=1 r=1  mean=3041.7us median=2916.8us p99=5226.2us max=6722.0us  274 chunk/s  sent=300
+server[pipe]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5099 silent_runs=1687
+  client 1: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5096 silent_runs=1687
+  client 2: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5095 silent_runs=1687
+  client 3: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5097 silent_runs=1687
+  client 4: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5099 silent_runs=1687
+  client 5: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5096 silent_runs=1687
+  client 6: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5097 silent_runs=1687
+  client 7: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5096 silent_runs=1687
+server[pipe] norm_256K_c8: chunks=2400 bytes=629145600 global=2400 bad=0 send_fail=0 dropped=0
+  utime=2451157us stime=974074us nvcsw=14234 nivcsw=2246 VmRSS=2980kB VmHWM=4856kB
+1s
+[64/64] shm norm_256K_c8 ... client[shm] id=2 norm 262144B c=8 W=1 r=1  mean=2158.4us median=1975.8us p99=4523.8us max=8697.6us  345 chunk/s  sent=300
+client[shm] id=5 norm 262144B c=8 W=1 r=1  mean=2144.8us median=2014.6us p99=4082.9us max=5823.2us  348 chunk/s  sent=300
+client[shm] id=7 norm 262144B c=8 W=1 r=1  mean=2160.8us median=2005.7us p99=4959.4us max=7130.6us  348 chunk/s  sent=300
+client[shm] id=3 norm 262144B c=8 W=1 r=1  mean=2202.6us median=2084.2us p99=4656.1us max=7680.1us  340 chunk/s  sent=300
+client[shm] id=0 norm 262144B c=8 W=1 r=1  mean=2179.6us median=2017.8us p99=4957.4us max=7668.2us  337 chunk/s  sent=300
+client[shm] id=6 norm 262144B c=8 W=1 r=1  mean=2142.7us median=1970.8us p99=4600.6us max=6274.7us  341 chunk/s  sent=300
+client[shm] id=1 norm 262144B c=8 W=1 r=1  mean=2161.0us median=1966.4us p99=4637.5us max=5213.5us  342 chunk/s  sent=300
+client[shm] id=4 norm 262144B c=8 W=1 r=1  mean=2140.9us median=1968.6us p99=4983.1us max=5497.7us  347 chunk/s  sent=300
+server[shm]: 준비됨 (Ctrl+C로 종료)
+  client 0: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5099 silent_runs=1687
+  client 1: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5096 silent_runs=1687
+  client 2: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5095 silent_runs=1687
+  client 3: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5097 silent_runs=1687
+  client 4: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5099 silent_runs=1687
+  client 5: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5096 silent_runs=1687
+  client 6: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5097 silent_runs=1687
+  client 7: chunks=300 bytes=78643200 mean_rms=0.2040 max_peak=0.5096 silent_runs=1687
+server[shm] norm_256K_c8: chunks=2400 bytes=629145600 global=2400 bad=0 send_fail=0 dropped=0
+  utime=2958951us stime=440310us nvcsw=2444 nivcsw=1470 VmRSS=43900kB VmHWM=45212kB
+1s
+끝: 20초 (0분). 문제 있는 조건 0개 (checks.csv에서 client_fail, match, leftover_ipc 확인)

@@ -16,3 +16,7 @@ app/client_*_tsan
 phase1/memcpy_ref
 phase1/pipe_bench
 phase1/shm_bench
+
+# 응용 측정 원자료: 용량이 커서 git에는 요약만 넣고, 원자료는 제출용 tar에만 넣는다
+data/app/*/*.gz
+data/app/quick_*/client_*_raw.csv
