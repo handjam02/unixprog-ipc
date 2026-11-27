@@ -10,7 +10,7 @@
  *      그래야 두 버전의 차이가 IPC 부분에서만 나온다.
  *   2. 함수마다 부르는 스레드가 정해져 있다(아래 주석). 그 밖의 스레드에서 부르지 않는다.
  *   3. 서버 수신은 기본판에서 채널(FIFO 또는 shm 링 칸)의 내용을 큐 버퍼로 복사한다(기획서 6.4절).
- *      shm 제자리 처리는 설계 개선 후보(E5)라 기본판에 넣지 않는다.
+ *      shm 제자리 처리는 설계 개선 후보(E5)라 기본판에 넣지 않고, 서버 -X inplace로만 켠다.
  */
 #ifndef IPC_H
 #define IPC_H
@@ -69,13 +69,19 @@ typedef struct {
 /* 수신 스레드가 받아서 작업 큐에 넣는 단위 */
 typedef struct {
     app_hdr_t hdr;
-    uint8_t  *data;     /* hdr.size 바이트. server_recv가 할당하고 워커가 처리 뒤 free */
+    uint8_t  *data;     /* hdr.size 바이트. server_recv가 주고 워커가 처리 뒤 server_chunk_free */
 } chunk_t;
 
 typedef struct ipc_server ipc_server_t;   /* 버전마다 내용이 다르다 */
 typedef struct ipc_client ipc_client_t;
 
 /* ---- 서버 ---- */
+
+/* main 스레드, server_open 전에. 설계 개선 실험용 옵션(기획서 7.2절). 기본판은 부르지 않는다.
+ *   shm:  "inplace"  E5 제자리 처리. 칸에서 큐 버퍼로 복사하지 않고 shm 칸에서 바로 처리하고,
+ *                    정규화 결과도 그 칸에 덮어써 응답 링에는 헤더만 넣는다.
+ * 모르는 옵션이면 -1 */
+int  ipc_server_option(const char *opt);
 
 /* main 스레드. 같은 이름의 남은 자원이 있으면 지우고 새로 만든다. 실패하면 NULL */
 ipc_server_t *server_open(void);
@@ -91,6 +97,11 @@ int  server_recv(ipc_server_t *s, chunk_t *out);
  * h->type은 MSG_RSP_STATS 또는 MSG_RSP_AUDIO, h->client와 h->seq는 요청 값 그대로.
  * payload를 다 보낼 때까지 반환하지 않는다. 반환: 0 성공, -1 오류(그 클라이언트가 나감 등) */
 int  server_send(ipc_server_t *s, const app_hdr_t *h, const void *payload);
+
+/* server_recv가 준 청크를 다 쓴 스레드가 부른다(워커, 또는 버릴 때 수신 스레드).
+ * 기본판은 free(c->data). shm 제자리 처리에서는 data가 shm 칸이라 free하지 않는다
+ * (칸은 응답을 다 읽은 클라이언트가 돌려준다) */
+void server_chunk_free(ipc_server_t *s, chunk_t *c);
 
 /* 시그널 스레드가 부른다. server_recv를 깨워 -1을 돌려주게 한다 */
 void server_stop(ipc_server_t *s);

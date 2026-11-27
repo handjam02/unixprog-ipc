@@ -16,7 +16,7 @@
 #   -w 100                   워밍업 청크 수 (기록 안 함)
 #   -W 1                     창 크기 (5.1절 기본 1, 추가 조건 4)
 #   -E "..."                 서버에 더 넘길 옵션 (예: "-L table", "-G mutex -K 1")
-#   -T TAG                   결과 폴더 이름에 붙일 실험 이름 (기본 e0)
+#   -T TAG                   결과 폴더 이름에 붙일 실험 이름 (기본 e0, -q면 quick)
 #   -P 2                     조건 사이 쉬는 초 (1단계 E5의 회차별 하락 대비, 10.3절)
 #   -t 300                   클라이언트 하나의 시간 제한(초). 넘으면 실패로 기록
 #   -q                       짧은 시험 (-R 1 -n 200)
@@ -38,17 +38,21 @@ set -u
 cd "$(dirname "$0")/.."
 
 IPCS="pipe shm"; SIZES="4K 16K 64K 256K"; MODES="stats norm"; CLIENTS="1 2 4 8"
-RUNS=30; COUNT=1000; WARMUP=100; WINDOW=1; SRV_EXTRA=""; TAG=e0; PAUSE=2; CTIMEOUT=300
+RUNS=30; COUNT=1000; WARMUP=100; WINDOW=1; SRV_EXTRA=""; TAG=""; PAUSE=2; CTIMEOUT=300; QUICK=0
 
 while getopts "i:s:m:c:R:n:w:W:E:T:P:t:qh" o; do
     case $o in
     i) IPCS=$OPTARG ;; s) SIZES=$OPTARG ;; m) MODES=$OPTARG ;; c) CLIENTS=$OPTARG ;;
     R) RUNS=$OPTARG ;; n) COUNT=$OPTARG ;; w) WARMUP=$OPTARG ;; W) WINDOW=$OPTARG ;;
     E) SRV_EXTRA=$OPTARG ;; T) TAG=$OPTARG ;; P) PAUSE=$OPTARG ;; t) CTIMEOUT=$OPTARG ;;
-    q) RUNS=1; COUNT=200; TAG=quick ;;
+    q) QUICK=1 ;;
     *) sed -n '2,26p' "$0"; exit 2 ;;
     esac
 done
+
+# -q는 옵션 순서와 상관없이 같은 뜻. -T를 주지 않았을 때만 이름을 quick으로
+if [ "$QUICK" = 1 ]; then RUNS=1; COUNT=200; fi
+[ -z "$TAG" ] && TAG=$([ "$QUICK" = 1 ] && echo quick || echo e0)
 
 make --no-print-directory -s app_pipe app_shm || exit 1
 
@@ -205,7 +209,7 @@ T=$(( $(date +%s) - T_ALL ))
 bad=$(awk -F, 'NR>1 && ($6!=0 || $9!=1 || $10!=0)' "$CHECKS" | wc -l)
 echo
 echo "끝: ${T}초 ($((T / 60))분). 문제 있는 조건 ${bad}개 (checks.csv에서 client_fail, match, leftover_ipc 확인)" | tee -a "$LOG"
-if [ "$TAG" = quick ]; then
+if [ "$QUICK" = 1 ]; then
     echo "전체 E0(30회, 청크 1000개) 예상: 약 $(( T * 30 * (1000 + 100) / (200 + 100) / 60 ))분 (조건 사이 쉬는 시간 포함 대략값)"
 fi
 echo "결과 폴더: $OUT"

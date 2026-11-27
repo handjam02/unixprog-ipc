@@ -86,6 +86,9 @@ pipe 버전과 shared memory 버전을 만들고 성능을 비교한다.
   -I MS       통계 보고 스레드 간격 (기본 100ms)
   -o DIR      결과 폴더 (없으면 화면 요약만)
   -l LABEL    결과 파일 이름과 요약 줄에 붙일 조건 이름 (기본 run)
+  -X OPT      설계 개선 실험용 IPC 옵션. 기본판(E0)은 쓰지 않는다
+                shm: inplace = E5 제자리 처리 (요청 칸에서 바로 처리하고
+                     정규화 결과도 그 칸에 덮어씀, 응답 칸에는 헤더만)
 
 클라이언트 옵션 (app/client_pipe, app/client_shm)
   -s SIZE     청크 크기: 4K, 16K, 64K, 256K (기본 16K, 최대 256K)

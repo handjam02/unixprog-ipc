@@ -36,6 +36,18 @@
  *   SEM_UNDO는 쓰지 않는다. 카운팅 세마포어의 P와 V를 서로 다른 프로세스가 하기 때문이다
  *   (1단계 shm_bench.c와 같은 이유). 그래서 슬롯을 비울 때 서버가 세마포어 값을 처음 값으로 되돌린다.
  *
+ * 설계 개선 E5: 제자리 처리 (서버 -X inplace, 기획서 6.4절, 7.2절)
+ *   기본판:  클라이언트 -> 요청 칸 -> (수신 스레드 복사) 큐 버퍼 -> 워커 처리
+ *            -> (워커 복사) 응답 칸 -> (클라이언트 복사) 클라이언트 버퍼.  수신 스레드가 칸을 바로 돌려줌
+ *   제자리:  클라이언트 -> 요청 칸 -> 워커가 칸에서 바로 처리, 정규화 결과도 그 칸에 덮어씀
+ *            -> 응답 칸에는 헤더만(통계 모드는 32바이트 통계도) -> 클라이언트가 요청 칸에서 복사
+ *   복사가 정규화 모드에서 두 번, 통계 모드에서 한 번 줄고, 청크마다 하던 malloc/free와
+ *   응답 칸의 큰 영역(페이지)을 쓰지 않는다.
+ *   요청 칸은 서버가 아니라 응답을 다 읽은 클라이언트가 돌려준다(REQ_EMPTY를 클라이언트가 올림).
+ *   클라이언트는 seq % 16 자리에 그 청크를 쓴 칸 번호를 적어 두었다가 응답의 seq로 찾는다.
+ *   나가 있는 요청이 창 크기(최대 4) 이하이고 seq가 연속이라 16칸 안에서 겹치지 않는다.
+ *   칸이 돌아오는 순서가 바뀌어도(창 2 이상) 다음에 쓸 칸은 16번 전에 쓴 칸이라 이미 비어 있다.
+ *
  * 알려진 한계 (pipe 버전과 같음): 클라이언트가 BYE 없이 죽으면, 큐에 남아 있던 그 클라이언트의
  * 청크 응답이 같은 번호를 새로 받은 클라이언트에게 갈 수 있다. 빈 슬롯은 돌아가며 주어 바로
  * 재사용되지 않게 했고, 클라이언트는 seq와 크기를 검사해 잘못된 응답을 센다.
@@ -87,7 +99,7 @@ typedef struct {
     uint32_t        magic;
     int32_t         server_pid;
     uint32_t        next_hint;                  /* 다음에 먼저 볼 빈 슬롯 (번호를 돌아가며 줌) */
-    uint32_t        pad;
+    uint32_t        inplace;                    /* 1 = E5 제자리 처리. 클라이언트가 접속할 때 읽음 */
     pthread_mutex_t table_mu;                   /* 프로세스 공유, robust */
     slot_entry_t    slot[APP_MAX_CLIENTS];
 } shm_head_t;
@@ -191,8 +203,11 @@ typedef struct {
     atomic_int closing;     /* 수신 스레드가 슬롯을 비우려 함 -> 기다리는 워커는 포기 */
 } srv_slot_t;
 
+static int opt_inplace;                         /* ipc_server_option("inplace") */
+
 struct ipc_server {
     int          shmid, semid;
+    int          inplace;
     uint8_t     *base;
     shm_head_t  *head;
     atomic_int   stop;
@@ -291,6 +306,11 @@ static int srv_take(ipc_server_t *s, uint32_t id, chunk_t *out)
     if (h.type == MSG_CHUNK && h.size <= APP_MAX_CHUNK) {
         out->hdr = h;
         out->hdr.client = id;                   /* 번호는 서버가 정한 값을 믿는다 */
+        if (s->inplace) {                       /* E5: 칸을 그대로 넘기고 돌려주지 않는다 */
+            out->data = cell + sizeof(h);
+            c->ridx = (c->ridx + 1) % APP_SHM_RING;
+            return 1;
+        }
         out->data = xmalloc(h.size ? h.size : 1);
         memcpy(out->data, cell + sizeof(h), h.size);   /* 기본판: 칸 -> 큐 버퍼 (6.4절) */
     }
@@ -347,6 +367,10 @@ ipc_server_t *server_open(void)
     pthread_mutexattr_destroy(&ma);
     s->head->server_pid = (int32_t)getpid();
     s->head->next_hint = 0;
+    s->head->inplace = (uint32_t)opt_inplace;
+    s->inplace = opt_inplace;
+    if (s->inplace)
+        fprintf(stderr, "ipc_shm: E5 제자리 처리 켬 (-X inplace)\n");
     __atomic_store_n(&s->head->magic, SHM_MAGIC, __ATOMIC_RELEASE);
 
     clock_gettime(CLOCK_MONOTONIC, &s->last_check);
@@ -406,6 +430,11 @@ int server_send(ipc_server_t *s, const app_hdr_t *h, const void *payload)
     if (h->client >= APP_MAX_CLIENTS || h->size > APP_MAX_CHUNK)
         return -1;
     c = &s->c[h->client];
+    if (s->inplace && h->type == MSG_RSP_AUDIO) {     /* payload가 그 클라이언트의 요청 칸인지 */
+        const uint8_t *p = payload, *r0 = req_cell(s->base, h->client, 0) + sizeof(app_hdr_t);
+        if (p < r0 || p >= r0 + (size_t)APP_SHM_RING * CELL_SIZE || (size_t)(p - r0) % CELL_SIZE)
+            return -1;
+    }
 
     pthread_mutex_lock(&c->wmu);                /* 응답 하나를 끝까지 넣은 뒤 푼다 */
     if (!c->active)
@@ -419,13 +448,29 @@ int server_send(ipc_server_t *s, const app_hdr_t *h, const void *payload)
     }
     cell = rsp_cell(s->base, h->client, c->widx);
     memcpy(cell, h, sizeof(*h));
-    if (h->size)
+    if (s->inplace && h->type == MSG_RSP_AUDIO) {
+        /* E5: 정규화 결과는 이미 요청 칸에 있다. 헤더만 넣고 클라이언트가 요청 칸에서 읽는다 */
+    } else if (h->size) {
         memcpy(cell + sizeof(*h), payload, h->size);
+    }
     c->widx = (c->widx + 1) % APP_SHM_RSP_RING;
     r = sem_post2(s->semid, SEM_RSP_FULL(h->client), -1);
 out:
     pthread_mutex_unlock(&c->wmu);
     return r;
+}
+
+int ipc_server_option(const char *opt)
+{
+    if (strcmp(opt, "inplace") == 0) { opt_inplace = 1; return 0; }
+    return -1;
+}
+
+void server_chunk_free(ipc_server_t *s, chunk_t *c)
+{
+    if (!s->inplace)                            /* 제자리: shm 칸이라 free하지 않음 */
+        free(c->data);
+    c->data = NULL;
 }
 
 void server_stop(ipc_server_t *s)
@@ -460,6 +505,8 @@ struct ipc_client {
     pid_t     server_pid;
     uint32_t  widx;         /* 요청 링 다음에 쓸 칸 (송신 스레드만) */
     uint32_t  ridx;         /* 응답 링 다음에 읽을 칸 (수신 스레드만) */
+    int       inplace;      /* E5: 서버가 제자리 처리 중 */
+    uint32_t  cell_of[APP_SHM_RING];   /* E5: seq % 16 -> 그 청크를 쓴 요청 칸 (송신 쓰기, 수신 읽기) */
 };
 
 /* 막힐 수 있는 P. 서버가 죽었거나 집합이 지워졌으면 -1 */
@@ -494,6 +541,7 @@ ipc_client_t *client_connect(uint32_t *client_id)
         goto fail;
     }
     c->server_pid = h->server_pid;
+    c->inplace = (int)h->inplace;
     c->semid = semget(APP_SEM_KEY, 0, 0);
     if (c->semid < 0) { perror("semget"); goto fail; }
 
@@ -541,25 +589,35 @@ int client_send(ipc_client_t *c, const app_hdr_t *h, const void *payload)
     memcpy(cell, h, sizeof(*h));
     if (h->size)
         memcpy(cell + sizeof(*h), payload, h->size);
+    if (c->inplace)
+        __atomic_store_n(&c->cell_of[h->seq % APP_SHM_RING], c->widx, __ATOMIC_RELEASE);
     c->widx = (c->widx + 1) % APP_SHM_RING;
     return sem_post2(c->semid, SEM_REQ_FULL(c->id), SEM_NOTIFY);   /* 칸과 알림을 한 번에 */
 }
 
 int client_recv(ipc_client_t *c, app_hdr_t *h, void *buf, size_t cap)
 {
-    uint8_t *cell;
+    uint8_t *cell, *req = NULL;
+    const uint8_t *src = NULL;
     int r = 0;
 
     if (cli_wait(c, SEM_RSP_FULL(c->id)) < 0)
         return -1;
     cell = rsp_cell(c->base, c->id, c->ridx);
     memcpy(h, cell, sizeof(*h));
+    if (c->inplace) {                           /* E5: 이 응답의 요청 칸 */
+        uint32_t k = __atomic_load_n(&c->cell_of[h->seq % APP_SHM_RING], __ATOMIC_ACQUIRE);
+        req = req_cell(c->base, c->id, k);
+        if (h->type == MSG_RSP_AUDIO)
+            src = req + sizeof(*h);             /* 정규화 결과는 요청 칸에 있다 */
+    }
     if (h->size > cap || h->size > APP_MAX_CHUNK)
         r = -1;
     else if (h->size)
-        memcpy(buf, cell + sizeof(*h), h->size);
+        memcpy(buf, src ? src : cell + sizeof(*h), h->size);
     c->ridx = (c->ridx + 1) % APP_SHM_RSP_RING;
-    if (sem_post2(c->semid, SEM_RSP_EMPTY(c->id), -1) < 0)
+    /* 응답 칸과(E5면) 요청 칸을 한 번에 돌려준다. 요청 칸은 복사를 마친 뒤에 */
+    if (sem_post2(c->semid, SEM_RSP_EMPTY(c->id), req ? (int)SEM_REQ_EMPTY(c->id) : -1) < 0)
         return -1;
     return r;
 }

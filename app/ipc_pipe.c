@@ -368,6 +368,19 @@ int server_send(ipc_server_t *s, const app_hdr_t *h, const void *payload)
     return r;
 }
 
+int ipc_server_option(const char *opt)
+{
+    (void)opt;                            /* pipe 버전에는 아직 설계 개선 옵션이 없다 */
+    return -1;
+}
+
+void server_chunk_free(ipc_server_t *s, chunk_t *c)
+{
+    (void)s;
+    free(c->data);
+    c->data = NULL;
+}
+
 void server_stop(ipc_server_t *s)
 {
     char b = 1;

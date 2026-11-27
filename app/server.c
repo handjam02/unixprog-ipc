@@ -55,7 +55,8 @@ static struct {
     int    report_ms;    /* -I */
     const char *outdir;  /* -o */
     const char *label;   /* -l: 측정 스크립트가 붙이는 조건 이름 */
-} opt = { 4, 16, 8, STATS_LOCK_PER_CLIENT, STATS_GLOCK_RWLOCK, 100, NULL, "run" };
+    const char *ipc_opts;/* -X: 설계 개선 옵션. 기본판은 NULL */
+} opt = { 4, 16, 8, STATS_LOCK_PER_CLIENT, STATS_GLOCK_RWLOCK, 100, NULL, "run", NULL };
 
 /* ---- 워커별 구간 기록 ---- */
 typedef struct {
@@ -126,11 +127,11 @@ static void *recv_main(void *arg)
         if (c.hdr.client >= APP_MAX_CLIENTS || c.hdr.size > APP_MAX_CHUNK ||
             c.hdr.size % sizeof(int16_t) != 0) {
             atomic_fetch_add(&n_bad, 1);
-            free(c.data);
+            server_chunk_free(srv, &c);
             continue;
         }
         if (wq_push(&wq, &c) < 0) {
-            free(c.data);
+            server_chunk_free(srv, &c);
             break;
         }
     }
@@ -213,7 +214,7 @@ static void *worker_main(void *arg)
         s.lk_grd_ns = lw.grd_ns;
         s.lk_gwr_ns = lw.gwr_ns;
         record(w, &s);
-        free(c.data);
+        server_chunk_free(srv, &c);
     }
     stats_global_flush(&pend, NULL);
     return NULL;
@@ -272,14 +273,15 @@ static void usage(const char *prog)
         "  -G MODE   전체 통계 락: rwlock | mutex (기본 rwlock, E2)\n"
         "  -I MS     통계 보고 간격 (기본 100)\n"
         "  -o DIR    결과 폴더 (없으면 화면 요약만)\n"
-        "  -l LABEL  결과 파일과 요약 줄에 붙일 조건 이름 (기본 run)\n",
+        "  -l LABEL  결과 파일과 요약 줄에 붙일 조건 이름 (기본 run)\n"
+        "  -X OPT    설계 개선 실험용 IPC 옵션 (shm: inplace = E5 제자리 처리). 여러 번 줄 수 있음\n",
         prog, MAX_WORKERS);
 }
 
 static int parse_opts(int argc, char **argv)
 {
     int c;
-    while ((c = getopt(argc, argv, "t:q:K:L:G:I:o:l:h")) != -1) {
+    while ((c = getopt(argc, argv, "t:q:K:L:G:I:o:l:X:h")) != -1) {
         switch (c) {
         case 't': opt.workers = atoi(optarg); break;
         case 'q': opt.qcap = (size_t)atol(optarg); break;
@@ -297,6 +299,13 @@ static int parse_opts(int argc, char **argv)
         case 'I': opt.report_ms = atoi(optarg); break;
         case 'o': opt.outdir = optarg; break;
         case 'l': opt.label = optarg; break;
+        case 'X':
+            if (ipc_server_option(optarg) < 0) {
+                fprintf(stderr, "server[%s]: 모르는 IPC 옵션 -X %s\n", IPC_NAME, optarg);
+                return -1;
+            }
+            opt.ipc_opts = optarg;      /* 요약 줄에 남김 (여러 개면 마지막 것) */
+            break;
         default: usage(argv[0]); return -1;
         }
     }
@@ -364,8 +373,9 @@ static void report_summary(const struct rusage *ru0, const struct rusage *ru1)
 
     /* 경쟁 상태 검사(6.3절): 전체 통계 청크 수 = 클라이언트별 합계. 클라이언트가 보낸 수와의
      * 비교는 측정 스크립트가 client_summary.csv의 sent_chunks, sent_bytes와 맞춰 본다 */
-    printf("server[%s] %s: chunks=%lu bytes=%lu global=%lu%s bad=%lu send_fail=%lu dropped=%lu\n",
-           IPC_NAME, opt.label, (unsigned long)chunks, (unsigned long)bytes, (unsigned long)gn,
+    printf("server[%s%s%s] %s: chunks=%lu bytes=%lu global=%lu%s bad=%lu send_fail=%lu dropped=%lu\n",
+           IPC_NAME, opt.ipc_opts ? " -X " : "", opt.ipc_opts ? opt.ipc_opts : "",
+           opt.label, (unsigned long)chunks, (unsigned long)bytes, (unsigned long)gn,
            gn == chunks ? "" : " (불일치!)", (unsigned long)atomic_load(&n_bad),
            (unsigned long)send_fail, (unsigned long)dropped);
     printf("  utime=%.0fus stime=%.0fus nvcsw=%ld nivcsw=%ld VmRSS=%ldkB VmHWM=%ldkB\n",
