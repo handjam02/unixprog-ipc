@@ -1,0 +1,3 @@
+ipc,label,workers,qcap,K,client_lock,global_lock,chunks,bytes,global_chunks,bad,send_fail,dropped,utime_us,stime_us,nvcsw,nivcsw,vmrss_kb,vmhwm_kb
+pipe,norm_256K_c8,1,16,8,per,rwlock,264000,69206016000,264000,0,0,0,165255358,95634242,2358487,3738,19772,21312
+shm,norm_256K_c8,1,16,8,per,rwlock,264000,69206016000,264000,0,0,0,168766679,8364941,265894,11355,60648,61912
