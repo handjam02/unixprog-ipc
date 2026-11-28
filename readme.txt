@@ -149,7 +149,10 @@ pipe 버전과 shared memory 버전을 만들고 성능을 비교한다.
   결과: data/app/<실험 이름>_<날짜_시각>/ 아래 6절의 CSV와
     env.txt (측정 환경), checks.csv (조건마다 합계 검증, 실패 수, 남은 IPC 자원),
     run.log (진행 기록), ipcs_after.txt (측정 직후 ipcs). 원자료는 .gz로 압축한다.
-  (스크립트는 조건마다 서버를 새로 띄워 서버 CPU 시간과 VmHWM이 조건별 값이 되게 하고,
+  $ scripts/run_strace.sh         원인 분석용 시스템 콜 횟수 (strace -c -f, 대표 4조건 x pipe/shm, 약 1분)
+  결과: data/app/strace_<날짜_시각>/ (조건별 strace -c 출력, summary.csv = 청크당 횟수).
+    strace가 실행을 느리게 하므로 여기서 나온 시간 값은 쓰지 않는다.
+  (run_app.sh는 조건마다 서버를 새로 띄워 서버 CPU 시간과 VmHWM이 조건별 값이 되게 하고,
    같은 조건의 pipe와 shm을 연달아 잰다)
 
 8. IPC 자원 정리
